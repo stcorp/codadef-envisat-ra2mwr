@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_SL2_AX_v0" format="binary" last-modified="2009-10-09"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>2</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="header">
+      <cd:Record format="binary">
+        <cd:Field name="model_number">
+          <cd:Integer>
+            <cd:Description>Model number</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="hemisphere_flag">
+          <cd:Integer>
+            <cd:Description>Hemisphere flag</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="corner_x">
+          <cd:Float>
+            <cd:Description>Corner X</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="corner_y">
+          <cd:Float>
+            <cd:Description>Corner Y</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="x_number">
+          <cd:Integer>
+            <cd:Description>X-number</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="y_number">
+          <cd:Integer>
+            <cd:Description>Y-number</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="resolution">
+          <cd:Float>
+            <cd:Description>Resolution</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="range_slopes">
+      <cd:Array>
+        <cd:Description>Range slopes [x, y]</cd:Description>
+        <cd:Dimension><![CDATA[int(/header/x_number)]]></cd:Dimension>
+        <cd:Dimension><![CDATA[int(/header/y_number)]]></cd:Dimension>
+        <cd:Record>
+          <cd:Description>Range slope</cd:Description>
+          <cd:Field name="x">
+            <cd:Float>
+              <cd:Description>X slope component</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>float</cd:NativeType>
+            </cd:Float>
+          </cd:Field>
+          <cd:Field name="y">
+            <cd:Float>
+              <cd:Description>Y slope component</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>float</cd:NativeType>
+            </cd:Float>
+          </cd:Field>
+        </cd:Record>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

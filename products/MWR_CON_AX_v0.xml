@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="MWR_CON_AX_v0" format="binary" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="file_creation_time">
+      <cd:Time timeformat="binary_envisat_datetime">
+        <cd:Description>File creation time</cd:Description>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="spare_1">
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="spare_2">
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="moving_window_size">
+      <cd:Integer>
+        <cd:Description>Size of the gain and offset smoothing filter</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="dsr_validity_threshold">
+      <cd:Integer>
+        <cd:Description>DSR validity threshold</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="processing_error_thresh">
+      <cd:Float>
+        <cd:Description>Processing error threshold</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="header_error_thresh">
+      <cd:Float>
+        <cd:Description>Header error threshold</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="telemetry_error_thresh">
+      <cd:Float>
+        <cd:Description>Telemetry error threshold</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="pointing_configuration">
+      <cd:Integer>
+        <cd:Description>Pointing configuration</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="side_lobe_table">
+      <cd:Integer>
+        <cd:Description>Side lobe table</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_POL_AX_v0" format="binary" last-modified="2009-09-18"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="gadsr">
+      <cd:Array>
+        <cd:Dimension>3650</cd:Dimension>
+        <cd:Description>GADS records, one per day</cd:Description>
+        <cd:Record>
+          <cd:Field name="time_stamp">
+            <cd:Time timeformat="binary_envisat_datetime">
+              <cd:Description>Time stamp</cd:Description>
+            </cd:Time>
+          </cd:Field>
+          <cd:Field name="rel_x_position">
+            <cd:Float>
+              <cd:Description>X-position of the pole relative to a mean position</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>float</cd:NativeType>
+              <cd:Unit>arcsec</cd:Unit>
+            </cd:Float>
+          </cd:Field>
+          <cd:Field name="rel_y_position">
+            <cd:Float>
+              <cd:Description>Y-position of the pole relative to a mean position</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>float</cd:NativeType>
+              <cd:Unit>arcsec</cd:Unit>
+            </cd:Float>
+          </cd:Field>
+        </cd:Record>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

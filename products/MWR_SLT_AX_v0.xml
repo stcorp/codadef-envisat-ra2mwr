@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="MWR_SLT_AX_v0" format="binary" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="slt_file_creation_time">
+      <cd:Time timeformat="binary_envisat_datetime">
+        <cd:Description>Secondary Lobe Data Base Creation time</cd:Description>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="transmission_coeff_reflector_channel_1">
+      <cd:Integer>
+        <cd:Description>Transmission coefficient of the reflector for Channel 1</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="transmission_coeff_reflector_channel_2">
+      <cd:Integer>
+        <cd:Description>Transmission coefficient of the reflector for Channel 2</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="glob_sec_lobes_contribution_channel_1">
+      <cd:Integer>
+        <cd:Description>Global secondary lobes contribution including cosmic background, sun and satellite contributions, for channel 1</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-3 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="global_sec_lobes_contribution_channel_2">
+      <cd:Integer>
+        <cd:Description>Global secondary lobes contribution including cosmic background, sun and satellite contributions, for channel 2</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-3 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eta_earth_channel_1">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for earth contribution on the secondary lobes for channel 1</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eta_earth_channel_2">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for earth contribution on the secondary lobes for channel 2</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="start_latitude">
+      <cd:Integer>
+        <cd:Description>Upper limit of the latitude range of data base validity (-90)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_north</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_north</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="stop_latitude">
+      <cd:Integer>
+        <cd:Description>Bottom limit of the latitude range of data base validity (+90)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_north</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_north</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="latitude_step">
+      <cd:Integer>
+        <cd:Description>Step of the of data base data (10)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_north</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_north</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="secondary_lobes_24_ghz">
+      <cd:Array>
+        <cd:Dimension>18</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Secondary lobes contribution to the brightness temperature (24 GHz)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="secondary_lobes_36_ghz">
+      <cd:Array>
+        <cd:Dimension>18</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Secondary lobes contribution to the brightness temperature (36 GHz)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="eff_factor_sun_contribution_channel_1">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for sun contribution on the secondary lobes for Channel 1</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eff_factor_sun_contribution_channel_2">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for sun contribution on the secondary lobes for Channel 2</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="sun_contribution_channel_1">
+      <cd:Integer>
+        <cd:Description>Sun secondary lobes contribution for Channel 1</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-3 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="sun_contribution_channel_2">
+      <cd:Integer>
+        <cd:Description>Sun secondary lobes contribution for Channel 2</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-3 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eff_factor_sky_contribution_channel_1">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for sky contribution on the secondary lobes for Channel 1</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eff_factor_sky_contribution_channel_2">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for sky contribution on the secondary lobes for Channel 2</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="sky_contribution_channel_1">
+      <cd:Integer>
+        <cd:Description>Sky secondary lobes contribution for Channel 1</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="sky_contribution_channel_2">
+      <cd:Integer>
+        <cd:Description>Sky secondary lobes contribution for Channel 2</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eff_factor_satellite_contribution_channel_1">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for satellite contribution on the secondary lobes for Channel 1</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="eff_factor_satellite_contribution_channel_2">
+      <cd:Integer>
+        <cd:Description>Efficiency factor for satellite contribution on the secondary lobes for Channel 2</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="start_longitude">
+      <cd:Integer>
+        <cd:Description>Lower limit of the latitude range of database validity (-180)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_east</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_east</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="stop_longitude">
+      <cd:Integer>
+        <cd:Description>Upper limit of the latitude range of database validity (+179)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_east</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_east</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="longitude_step">
+      <cd:Integer>
+        <cd:Description>Step of the of data base data (+1)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_east</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_east</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="start_latitude_2">
+      <cd:Integer>
+        <cd:Description>Upper limit of the latitude range of data base validity (-80)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_north</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_north</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="stop_latitude_2">
+      <cd:Integer>
+        <cd:Description>Bottom limit of the latitude range of data base validity (+80)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_north</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_north</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="latitude_step_2">
+      <cd:Integer>
+        <cd:Description>Step of the of data base data (1)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees_north</cd:Unit>
+        <cd:Conversion numerator="1" denominator="1e6">
+          <cd:Unit>degrees_north</cd:Unit>
+        </cd:Conversion>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_1_spring">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 1 (Spring) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 1 (Spring)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_1_summer">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 1 (Summer) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 1 (Summer)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_1_autumn">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 1 (Autumn) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 1 (Autumn)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_1_winter">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 1 (Winter) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 1 (Winter)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_2_spring">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 2 (Spring) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 2 (Spring)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_2_summer">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 2 (Summer) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 2 (Summer)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_2_autumn">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 2 (Autumn) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 2 (Autumn)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="earth_contribution_channel_2_winter">
+      <cd:Array>
+        <cd:Description>Earth secondary lobes contribution for Channel 2 (Winter) [latitude, longitude]</cd:Description>
+        <cd:Dimension>161</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Earth secondary lobes contribution for Channel 2 (Winter)</cd:Description>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+          <cd:Unit>K</cd:Unit>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

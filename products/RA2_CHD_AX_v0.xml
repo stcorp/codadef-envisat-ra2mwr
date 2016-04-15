@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_CHD_AX_v0" format="binary" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="chd_file_creation_time">
+      <cd:Time timeformat="binary_envisat_datetime">
+        <cd:Description>Characterisation file creation time</cd:Description>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="dsr_length">
+      <cd:Integer>
+        <cd:Description>Length of DSR in bytes</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spare_1">
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="ku_gain">
+      <cd:Integer>
+        <cd:Description>Ku-band antenna gain</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 dB</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="s_gain">
+      <cd:Integer>
+        <cd:Description>S-band antenna gain</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 dB</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_ant_beamwidth">
+      <cd:Integer>
+        <cd:Description>Ku-band antenna -3 dB beamwidth</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="s_ant_beamwidth">
+      <cd:Integer>
+        <cd:Description>S-band antenna -3 dB beamwidth</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-6 degrees</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_effective_gain">
+      <cd:Array>
+        <cd:Description>Effective TX-RX gain for Ku channel. TX-A/RFSS-A, TX-A/RFSS-B, TX-B/RFSS-B, TX-B/RFSS-A</cd:Description>
+        <cd:Dimension>4</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_effective_gain">
+      <cd:Array>
+        <cd:Description>Effective TX-RX gain for S channel. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_ptr_ref_power_at_mwr_output">
+      <cd:Array>
+        <cd:Description>Ku-band PTR reference power value at microwave receiver output. TX-A/RFSS-A, TX-A/RFSS-B, TX-B/RFSS-B, TX-B/RFSS-A</cd:Description>
+        <cd:Dimension>4</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_ptr_ref_power_at_mwr_output">
+      <cd:Array>
+        <cd:Description>S-band PTR reference power value at microwave receiver output. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_agc_ref_for_ptr_ref_power">
+      <cd:Array>
+        <cd:Description>Reference AGC used for PTR reference power value measurement at Ku-band. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_agc_ref_for_ptr_ref_power">
+      <cd:Array>
+        <cd:Description>Reference AGC used for PTR reference power value measurement at S-band. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_time_delay_cal">
+      <cd:Array>
+        <cd:Description>Default Ku-band time delay calibration factor derived from PTR measurement. TX-A/RFSS-A, TX-A/RFSS-B, TX-B/RFSS-B, TX-B/RFSS-A</cd:Description>
+        <cd:Dimension>4</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>ps</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_time_delay_cal">
+      <cd:Array>
+        <cd:Description>Default S-band time delay calibration factor derived from PTR measurement. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>ps</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_amplitude_cal">
+      <cd:Array>
+        <cd:Description>Default Ku-band amplitude calibration factor derived from on-ground PTR measurement. TX-A/RFSS-A, TX-A/RFSS-B, TX-B/RFSS-B, TX-B/RFSS-A</cd:Description>
+        <cd:Dimension>4</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_amplitude_cal">
+      <cd:Array>
+        <cd:Description>Default S-band amplitude calibration factor derived from on-ground PTR measurement. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="agc_characterization_table">
+      <cd:Array>
+        <cd:Description>AGC characterization table for AGC conversion.</cd:Description>
+        <cd:Dimension>128</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="agc_fine_correction_table">
+      <cd:Array>
+        <cd:Description>Correction table for AGC fine conversion</cd:Description>
+        <cd:Dimension>301</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="agc_char_table_for_npm_cal">
+      <cd:Array>
+        <cd:Description>AGC characterization table for NPM calibration</cd:Description>
+        <cd:Dimension>126</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_diff_delay_cal">
+      <cd:Array>
+        <cd:Description>Differential delay calibration factor for time delay measurement of Ku-band channel defined during ground test activity. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>ps</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_diff_delay_cal">
+      <cd:Array>
+        <cd:Description>Differential delay calibration factor for time delay measurement of S-band channel defined during ground test activity. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>ps</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_loss_cal">
+      <cd:Array>
+        <cd:Description>Loss calibration factor for Ku-band channel defined during ground test activity. TX-A/RFSS-A, TX-A/RFSS-B, TX-B/RFSS-B, TX-B/RFSS-A</cd:Description>
+        <cd:Dimension>4</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_loss_cal">
+      <cd:Array>
+        <cd:Description>Loss calibration factor for S-band channel defined during ground test activity. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="nominal_tx_pulse_length">
+      <cd:Integer>
+        <cd:Description>Nominal TX pulse length</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>ps</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_first_nominal_chirp_bw">
+      <cd:Integer>
+        <cd:Description>Ku-band first nominal chirp bandwidth</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>kHz</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_second_nominal_chirp_bw">
+      <cd:Integer>
+        <cd:Description>Ku-band second nominal chirp bandwidth</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>kHz</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_third_nominal_chirp_bw">
+      <cd:Integer>
+        <cd:Description>Ku-band third nominal chirp bandwidth</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>kHz</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="s_nominal_chirp_bw">
+      <cd:Integer>
+        <cd:Description>S-band nominal chirp bandwidth</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>kHz</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_first_chirp_slope">
+      <cd:Array>
+        <cd:Description>Chirp slope of first Ku chirp. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>kHz/us</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_second_chirp_slope">
+      <cd:Array>
+        <cd:Description>Chirp slope of second Ku chirp. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>kHz/us</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_third_chirp_slope">
+      <cd:Array>
+        <cd:Description>Chirp slope of third Ku chirp. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>kHz/us</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_chirp_slope">
+      <cd:Array>
+        <cd:Description>Chirp slope of S chirp. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>kHz/us</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="spare_2">
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="txrx_clock_period_from_uso_freq_cal">
+      <cd:Array>
+        <cd:Description>TX-RX clock period from USO frequency calibration. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>64</cd:BitSize>
+          <cd:NativeType>uint64</cd:NativeType>
+          <cd:Unit>1e-6 ps</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ku_pulse_rep_interval">
+      <cd:Integer>
+        <cd:Description>Ku pulse repetition interval (unit: TX-RX clock periods)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_ambiguity_order">
+      <cd:Integer>
+        <cd:Description>Ambiguity order for Ku-band</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ku_rader_wavelength">
+      <cd:Array>
+        <cd:Description>Ku-band radar wavelength. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-6 m</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="s_rader_wavelength">
+      <cd:Array>
+        <cd:Description>S-band radar wavelength. RFSS-A, RFSS-B</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-6 m</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ptr_width_comp_factor">
+      <cd:Integer>
+        <cd:Description>Factor for PTR width computation</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>1e-8</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spare_3">
+      <cd:Array>
+        <cd:Dimension>12</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>8</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+      <cd:Hidden/>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

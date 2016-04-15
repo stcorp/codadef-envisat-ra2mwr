@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_PLA_AX_v0" format="binary" last-modified="2009-09-28" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="gads">
+      <cd:Array>
+        <cd:Description>Platform data</cd:Description>
+        <cd:Dimension><![CDATA[$num_dsr]]></cd:Dimension>
+        <cd:Record>
+          <cd:Field name="time_stamp">
+            <cd:Time timeformat="binary_envisat_datetime">
+              <cd:Description>Time stamp</cd:Description>
+            </cd:Time>
+          </cd:Field>
+          <cd:Field name="centre_of_mass_correction">
+            <cd:Float>
+              <cd:Description>Centre of mass correction (distance between antenna phase centre and the centre of gravity of the satellite)</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>float</cd:NativeType>
+            </cd:Float>
+          </cd:Field>
+        </cd:Record>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Init><![CDATA[$num_dsr = int(/dsd[0]/num_dsr)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

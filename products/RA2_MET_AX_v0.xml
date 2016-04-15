@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_MET_AX_v0" format="binary" last-modified="2009-10-09"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="altitude_meteo_grid_points">
+      <cd:Array>
+        <cd:Description>Altitude of meteorological grid points [x, y]</cd:Description>
+        <cd:Dimension>181</cd:Dimension>
+        <cd:Dimension>360</cd:Dimension>
+        <cd:Integer>
+          <cd:Description>Altitude of meteo grid point</cd:Description>
+          <cd:BitSize>16</cd:BitSize>
+          <cd:NativeType>uint16</cd:NativeType>
+          <cd:Unit>m</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

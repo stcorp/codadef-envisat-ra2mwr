@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="MWR_CHD_AX_v0" format="binary" last-modified="2009-10-12"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>4</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="thermistor_pol">
+      <cd:Array>
+        <cd:Dimension>32</cd:Dimension>
+        <cd:Dimension>10</cd:Dimension>
+        <cd:Description>Thermister polynomial coefficients to evaluate on-board thermistors [thermistor no., coefficient index]</cd:Description>
+        <cd:Integer>
+          <cd:Description>Thermister polynomial coefficient j for thermister i</cd:Description>
+          <cd:BitSize>64</cd:BitSize>
+          <cd:NativeType>int64</cd:NativeType>
+          <cd:Unit>1e-15</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="spare">
+      <cd:Array>
+        <cd:Dimension>40</cd:Dimension>
+        <cd:Integer>
+          <cd:Description>Spare</cd:Description>
+          <cd:BitSize>8</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="temp_var_of_ceu_board_24_ghz">
+      <cd:Integer>
+        <cd:Description>Temperature variation of CEU board (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="temp_var_ceu_board_36_ghz">
+      <cd:Integer>
+        <cd:Description>Temperature variation of CEU board (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_dicke_load_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum Dicke load temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_dicke_load_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum Dicke load temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_dicke_load_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum Dicke load temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_dicke_load_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum Dicke load temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_hot_load_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum hot load temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_hot_load_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum hot load temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_hot_load_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum hot load temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_hot_load_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum hot load temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_mix_load_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum mixer temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_mix_load_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum mixer temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_mix_load_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum mixer temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_mix_load_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum mixer temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_if_module_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum IF module temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_if_module_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum IF module temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_if_module_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum IF module temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_if_module_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum IF module temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_receiver_temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum receiver temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_if_module__temp_24_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum receiver temperature (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_receiver_temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Minimum receiver temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_if_module__temp_36_ghz">
+      <cd:Integer>
+        <cd:Description>Maximum receiver temperature (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_exp_brightness_temp_channel_1">
+      <cd:Integer>
+        <cd:Description>Minimum expected brightness temperatures for channel 1</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_exp_brightness_temp_channel_1">
+      <cd:Integer>
+        <cd:Description>Maximum expected brightness temperatures for channel 1</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_exp_brightness_temp_channel_2">
+      <cd:Integer>
+        <cd:Description>Minimum expected brightness temperatures for channel 2</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_exp_brightness_temp_channel_2">
+      <cd:Integer>
+        <cd:Description>Maximum expected brightness temperatures for channel 2</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spares">
+      <cd:Array>
+        <cd:Dimension>4</cd:Dimension>
+        <cd:Integer>
+          <cd:Description>Spares</cd:Description>
+          <cd:BitSize>8</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="lin_coeff_gain_temp_response_24_ghz">
+      <cd:Integer>
+        <cd:Description>Linear coefficient for gain vs. temperature response (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-5 1/K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="quadr_coefficient_gain_temp_response_24_ghz">
+      <cd:Integer>
+        <cd:Description>Quadratic coefficient for gain vs. temperature response (24 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-5 1/K-2</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="lin_coeff_gain_tempresponse_36_ghz">
+      <cd:Integer>
+        <cd:Description>Linear coefficient for gain vs. temperature response (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-5 1/K</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="quadr_coeff_gain_temp_response_36_ghz">
+      <cd:Integer>
+        <cd:Description>Quadratic coefficient for gain vs. temperature response (36 GHz channel)</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-5 1/K-2</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spare_1">
+      <cd:Array>
+        <cd:Dimension>16</cd:Dimension>
+        <cd:Integer>
+          <cd:Description>Spares</cd:Description>
+          <cd:BitSize>8</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="channel_characterization_nominal_mode">
+      <cd:Record>
+        <cd:Field name="characterization_24_ghz_0_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_10_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_20_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_30_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_40_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_0_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_10_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_20_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_30_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_40_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Dimension>20</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="channel_characterization_redundant_mode">
+      <cd:Record>
+        <cd:Field name="characterization_24_ghz_0_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_10_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_20_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_30_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_24_ghz_40_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_0_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_10_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_20_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_30_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="characterization_36_ghz_40_degr">
+          <cd:NamedType id="MWR_CHD_AX_char_info" />
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Dimension>20</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

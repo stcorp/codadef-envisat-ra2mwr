@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<cd:ProductClass name="ENVISAT_RA2MWR" last-modified="2010-02-12" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>ENVISAT RA2 and MWR products</cd:Description>
+  <cd:ProductType name="RA2_MW__1P">
+    <cd:Description>RA2 Level 1B</cd:Description>
+    <cd:ProductDefinition id="RA2_MW__1P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_MW__1P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_FGD_2P">
+    <cd:Description>RA-2 Fast Delivery Geophysical Data Record</cd:Description>
+    <cd:ProductDefinition id="RA2_FGD_2P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_FGD_2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_GDR_2P">
+    <cd:Description>RA-2 Geophysical Data Record</cd:Description>
+    <cd:ProductDefinition id="RA2_GDR_2P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_GDR_2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_IGD_2P">
+    <cd:Description>RA-2 Intermediate Geophysical Data Record</cd:Description>
+    <cd:ProductDefinition id="RA2_IGD_2P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_IGD_2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_MWS_2P">
+    <cd:Description>RA-2 Sensor Data Record</cd:Description>
+    <cd:ProductDefinition id="RA2_MWS_2P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_MWS_2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_WWV_2P">
+    <cd:Description>RA-2 wind/wave product for Meteo Users</cd:Description>
+    <cd:ProductDefinition id="RA2_WWV_2P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_WWV_2P</cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_MAR_2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_MSS_AX">
+    <cd:Description>Mean Sea Surface Heights from CLS01 model</cd:Description>
+    <cd:ProductDefinition id="RA2_MSS_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on version 4/C of product specification PO-RS-MDA-GS-2009 Vol14</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_MSS_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="MWR_NL__0P">
+    <cd:Description>MWR Level 0 Product</cd:Description>
+    <cd:ProductDefinition id="MWR_NL__0P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 6 of product specification PO-ID-DOR-SY-0032 Vol9</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">MWR_NL__0P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_ME__0P">
+    <cd:Description>RA-2 Level 0 Product</cd:Description>
+    <cd:ProductDefinition id="RA2_ME__0P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 6 of product specification PO-ID-DOR-SY-0032 Vol10</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_ME__0P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_CAL_0P">
+    <cd:Description>RA-2 Level 0 Product</cd:Description>
+    <cd:ProductDefinition id="RA2_ME__0P_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 6 of product specification PO-ID-DOR-SY-0032 Vol10</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_CAL_0P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_USO_AX">
+    <cd:Description>RA-2 USO Auxiliary file</cd:Description>
+    <cd:ProductDefinition id="RA2_USO_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_USO_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_IFF_AX">
+    <cd:Description>RA-2 IF Mask from in-flight data</cd:Description>
+    <cd:ProductDefinition id="RA2_IFF_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_IFF_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_IFA_AX">
+    <cd:Description>RA-2 IF Mask data from chain A</cd:Description>
+    <cd:ProductDefinition id="RA2_IFA_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_IFA_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_IFB_AX">
+    <cd:Description>RA-2 IF Mask data from chain B</cd:Description>
+    <cd:ProductDefinition id="RA2_IFB_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_IFB_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="MWR_LSF_AX">
+    <cd:Description>MWR Land/sea flag table file</cd:Description>
+    <cd:ProductDefinition id="MWR_LSF_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">MWR_LSF_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_CHD_AX">
+    <cd:Description>RA-2 instrument characterization file</cd:Description>
+    <cd:ProductDefinition id="RA2_CHD_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_CHD_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_IOC_AX">
+    <cd:Description>RA-2 ionospheric coefficients file</cd:Description>
+    <cd:ProductDefinition id="RA2_IOC_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_IOC_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_SOL_AX">
+    <cd:Description>Solar Activity Data File</cd:Description>
+    <cd:ProductDefinition id="RA2_SOL_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SOL_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_POL_AX">
+    <cd:Description>Pole Location Data File</cd:Description>
+    <cd:ProductDefinition id="RA2_POL_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_POL_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_CST_AX">
+    <cd:Description>RA-2 Constants Data File</cd:Description>
+    <cd:ProductDefinition id="RA2_CST_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_CST_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_DIP_AX">
+    <cd:Description>Modified DIP map File</cd:Description>
+    <cd:ProductDefinition id="RA2_DIP_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_DIP_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_OT1_AX">
+    <cd:Description>Ocean Tide solution 1 map file</cd:Description>
+    <cd:ProductDefinition id="RA2_OT1_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_OT1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_OT2_AX">
+    <cd:Description>Ocean Tide solution 2 map file</cd:Description>
+    <cd:ProductDefinition id="RA2_OT2_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 3/O of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_OT2_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/O</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="RA2_OT2_AX_v1" format="binary" version="1">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_OT2_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_4/C</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_TLG_AX">
+    <cd:Description>Tidal loading coefficients (solution 1) map file</cd:Description>
+    <cd:ProductDefinition id="RA2_TLG_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_TLG_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_TLD_AX">
+    <cd:Description>Tidal loading coefficients (solution 2) map file</cd:Description>
+    <cd:ProductDefinition id="RA2_TLD_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 3/O of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_TLD_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/O</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="RA2_TLD_AX_v1" format="binary" version="1">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_TLD_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_4/C</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_GEO_AX">
+    <cd:Description>Geoid height file</cd:Description>
+    <cd:ProductDefinition id="RA2_GEO_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_GEO_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_CON_AX">
+    <cd:Description>Processor configuration file</cd:Description>
+    <cd:ProductDefinition id="RA2_CON_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_CON_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_PLA_AX">
+    <cd:Description>Platform data file</cd:Description>
+    <cd:ProductDefinition id="RA2_PLA_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_PLA_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_SOI_AX">
+    <cd:Description>Ocean / ICE2 configuration system file</cd:Description>
+    <cd:ProductDefinition id="RA2_SOI_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 3/O of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SOI_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/O</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="RA2_SOI_AX_v1" format="binary" version="1">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SOI_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_4/C</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_ICT_AX">
+    <cd:Description>ICE1 / Sea Ice configuration system file</cd:Description>
+    <cd:ProductDefinition id="RA2_ICT_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_ICT_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_SSB_AX">
+    <cd:Description>Sea state bias table file</cd:Description>
+    <cd:ProductDefinition id="RA2_SSB_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SSB_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_SET_AX">
+    <cd:Description>Cartwright amplitudes file</cd:Description>
+    <cd:ProductDefinition id="RA2_SET_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SET_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_SL1_AX">
+    <cd:Description>RA-2 slope model for Greenland data file</cd:Description>
+    <cd:ProductDefinition id="RA2_SL1_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SL1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_SL2_AX">
+    <cd:Description>RA-2 slope model for Antarctica data file</cd:Description>
+    <cd:ProductDefinition id="RA2_SL2_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_SL2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="RA2_MET_AX">
+    <cd:Description>Altitude of meteorological grid points file</cd:Description>
+    <cd:ProductDefinition id="RA2_MET_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">RA2_MET_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="MWR_CON_AX">
+    <cd:Description>MWR processor configuration file</cd:Description>
+    <cd:ProductDefinition id="MWR_CON_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">MWR_CON_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="MWR_SLT_AX">
+    <cd:Description>MWR secondary lobe temperature file</cd:Description>
+    <cd:ProductDefinition id="MWR_SLT_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">MWR_SLT_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="MWR_CHD_AX">
+    <cd:Description>MWR instrument characterization file</cd:Description>
+    <cd:ProductDefinition id="MWR_CHD_AX_v0" format="binary" version="0">
+      <cd:Description>This definition is based on issue 3/O of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">MWR_CHD_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/O</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="MWR_CHD_AX_v1" format="binary" version="1">
+      <cd:Description>This definition is based on issue 4/C of product specification PO-RS-MDA-GS-2009</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">MWR_CHD_AX</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_4/C</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+</cd:ProductClass>

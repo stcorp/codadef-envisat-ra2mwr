@@ -1,0 +1,1612 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_ME__0P_MDSR" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>ISP Sensing Time</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="gsrt">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Ground Station Reference Time of reception</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="isp_length">
+    <cd:Integer>
+      <cd:Description>Length of the ISP = length of the source packet - 7 bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="crc_errs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs in the ISP which contain a CRC error</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rs_errs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs in the ISP for which a Reed-Solomon error correction was performed</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Array>
+      <cd:Description>Spare (set to zero)</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="packet_header">
+    <cd:NamedType id="CCSDS_packet_header"/>
+  </cd:Field>
+
+  <!-- data field header -->
+
+  <!--
+    The data field header has a number of fields that are shared by all source packets and
+    a number of fields that differ for the various instrument modes.
+
+    Instrument_mode:
+      0x0010 = 16 = acquisition (data has acquisition blocks only)
+      0x0020 = 32 = tracking (data has at least one tracking data block)
+      0x0021 = 33 = preset tracking
+      0x0022 = 34 = preset loop
+      0x0030 = 48 = IF calibration
+      0x0041 = 65 = RF BITE
+      0x0043 = 67 = Digital BITE
+
+    Common part:
+        16 bits data: header length
+        16 bits data: instrument mode
+        5 bits spare + 43 bits data: ICU time
+        16 bits data: redundancy definition vector
+        8 bits spare + 40 bits data: USO datation
+
+    After the USO datation field, there are several possible data layouts:
+    - instrument mode: acquisition (0x0010):
+        28 x 16 bits spare
+        8 bits spare + individual echoes flag
+        8 x 16 bits spare
+        20 x 8 bits acquisition/tracking identifier
+    - instrument mode: tracking (0x0020, 0x0021, 0x0022):
+        13 x 32 bits data + 2 x 16 bits data
+        8 bits spare + 8 bit individual echoes flag
+        8 x 16 bits spare
+        20 x 8 bits acquisition/tracking identifier
+    - instrument mode: RF-BITE or digital BITE (0x0041, 0x0043):
+        47 x 16 bits spare
+    - instrument mode: IF calibration (0x0030):
+        28 x 16 bits spare
+        8 bits spare + 8 bit individual echoes flag
+        8 x 16 bits spare
+    - instrument mode: ???? :
+        6 bits spare + 2 x 5 bits data
+        8 bits spare + 8 bits data
+        2 x 16 bits data
+        128 x 8 bits data
+        8 bits spare
+        8 bits data
+    -->
+
+  <cd:Field name="dfh">
+    <cd:Union>
+      <cd:FieldExpression><![CDATA[
+      if (int(:/instrument_mode) == 16,
+        0,
+        if (int(:/instrument_mode) == 32 || int(:/instrument_mode) == 33 || int(:/instrument_mode) == 34, 
+          1, 
+          if (int(:/instrument_mode)  == 48,
+            3,
+            if (int(:/instrument_mode) == 65 || int(:/instrument_mode) == 67,
+              2,
+              4))))]]></cd:FieldExpression>
+      <cd:Field name="dfh_acq">
+        <cd:Record>
+          <!-- field 0 common part -->
+          <cd:Field name="datafield_header_length">
+            <cd:Integer>
+              <cd:Description>Data Field Header Length</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="instrument_mode">
+          <!-- instrument_mode:
+                0x0010 = 16 = acquisition (data has acquisition blocks only)
+                0x0020 = 32 = tracking (data has at least one tracking data block)
+                0x0021 = 33 = preset tracking
+                0x0022 = 34 = preset loop
+                0x0030 = 48 = IF calibration
+                0x0041 = 65 = RF BITE
+                0x0043 = 67 = Digital BITE
+          -->
+            <cd:Integer>
+              <cd:Description>Instrument Mode</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_1">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>5</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="icu">
+            <cd:Integer>
+              <cd:Description>ICU</cd:Description>
+              <cd:Unit>1/524288 s</cd:Unit>
+              <cd:BitSize>43</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="redundancy_vector">
+            <cd:Integer>
+              <cd:Description>Redundancy Definition Vector</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_2">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>8</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="uso_datation">
+            <cd:Integer>
+              <cd:Description>USO datation</cd:Description>
+              <cd:Unit>1/100000 s</cd:Unit>
+              <cd:BitSize>40</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <!-- field 0 end of common part -->
+          <!-- field 0: data header field for instrument mode: acquisition -->
+          <cd:Field name="spare_3">
+            <cd:Array>
+              <cd:Dimension>28</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Spare (set to zero)</cd:Description>
+                <cd:BitSize>16</cd:BitSize>
+                <cd:NativeType>uint16</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="spare_4">
+            <cd:Integer>
+              <cd:Description>Spare (set to zero)</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="individual_echoes_flag">
+            <cd:Integer>
+              <cd:Description>Individual Echoes Flag</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_5">
+            <cd:Array>
+              <cd:Dimension>8</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Spare (set to zero)</cd:Description>
+                <cd:BitSize>16</cd:BitSize>
+                <cd:NativeType>uint16</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="acquisition_tracking_identifier">
+            <cd:Array>
+              <cd:Dimension>20</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Acquisition/Tracking Identifier</cd:Description>
+                <cd:BitSize>8</cd:BitSize>
+                <cd:NativeType>uint8</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+          </cd:Field>
+          <!-- field 0: end of data header field for instrument mode: acquisition -->
+        </cd:Record>
+      </cd:Field>
+  
+      <cd:Field name="dfh_trk">
+        <cd:Record>
+          <!-- field 1 common part -->
+          <cd:Field name="datafield_header_length">
+            <cd:Integer>
+              <cd:Description>Data Field Header Length</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="instrument_mode">
+            <cd:Integer>
+              <cd:Description>Instrument Mode</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_1">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>5</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="icu">
+            <cd:Integer>
+              <cd:Description>ICU</cd:Description>
+              <cd:Unit>1/524288 s</cd:Unit>
+              <cd:BitSize>43</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="redundancy_vector">
+            <cd:Integer>
+              <cd:Description>Redundancy Definition Vector</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_2">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>8</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="uso_datation">
+            <cd:Integer>
+              <cd:Description>USO datation</cd:Description>
+              <cd:Unit>1/100000 s</cd:Unit>
+              <cd:BitSize>40</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <!-- field 1 end of common part -->
+          <!-- field 1: data header field for instrument mode: tracking -->
+          <cd:Field name="alpha_coeff_time_delay_filter">
+            <cd:Record>
+              <cd:Description>Alpha coefficient for the time delay filter</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+             </cd:Record>
+          </cd:Field>
+          <cd:Field name="beta_coeff_time_delay_filter">
+            <cd:Record>
+              <cd:Description>Beta coefficient for the time delay filter</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="alpha_coeff_agc_filter">
+            <cd:Record>
+              <cd:Description>Alpha coefficient for the AGC filter</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="beta_coeff_agc_filter">
+            <cd:Record>
+              <cd:Description>Beta coefficient for the AGC filter</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="avg_noise_power">
+            <cd:Record>
+              <cd:Description>Estimated averaged Noise Power (NPM)</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                  <cd:Unit>Watt</cd:Unit>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="agc_attenuation">
+            <cd:Record>
+              <cd:Description>AGC attenuation used during noise power measurement</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                  <cd:Unit>dB</cd:Unit>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="delta_offset">
+            <cd:Record>
+              <cd:Description>Delta offset applied to averaged echoes to calculate position P of the leading edge</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="k_1_star_coefficient">
+            <cd:Integer>
+              <cd:Description>K1* coefficient of the first DFT sample</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="k_2_star_coefficient">
+            <cd:Integer>
+              <cd:Description>K2* coefficient of the second DFT sample</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="delta_alpha_1_correction_value">
+            <cd:Record>
+              <cd:Description>Correction value (related to chirp bandwidth of 320 MHz) applied to AGC setting during collection of S-band samples</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                  <cd:Unit>dB</cd:Unit>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="delta_alpha_2_correction_value">
+            <cd:Record>
+              <cd:Description>Correction value (related to chirp bandwidth of 80 MHz) applied to AGC setting during collection of S-band samples</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                  <cd:Unit>dB</cd:Unit>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="delta_alpha_3_correction_value">
+            <cd:Record>
+              <cd:Description>Correction value (related to chirp bandwidth of 20 MHz) applied to AGC setting during collection of S-band samples</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                  <cd:Unit>dB</cd:Unit>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="agc_reference_power_level">
+            <cd:Record>
+              <cd:Description>AGC power reference level</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                  <cd:Unit>dB</cd:Unit>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="agc_tracking_filter_offset">
+            <cd:Record>
+              <cd:Description>Programmable offset of AGC tracking filter linear interpolator</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="tracking_distance_filter_offset">
+            <cd:Record>
+              <cd:Description>Programmable offset of tracking distance filter linear interpolator</cd:Description>
+              <cd:Field name="mantisse">
+                <cd:Integer>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>int32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="exponent">
+                <cd:Integer>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="spare_4">
+            <cd:Integer>
+              <cd:Description>Spare (set to zero)</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="individual_echoes_flag">
+            <cd:Integer>
+              <cd:Description>Individual Echoes Flag</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_5">
+            <cd:Array>
+              <cd:Dimension>8</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Spare (set to zero)</cd:Description>
+                <cd:BitSize>16</cd:BitSize>
+                <cd:NativeType>uint16</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="acquisition_tracking_identifier">
+            <cd:Array>
+              <cd:Dimension>20</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Acquisition/Tracking Identifier</cd:Description>
+                <cd:BitSize>8</cd:BitSize>
+                <cd:NativeType>uint8</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+          </cd:Field>
+          <!-- field 1: end of data header field for instrument mode: tracking -->
+        </cd:Record>
+      </cd:Field>
+  
+      <cd:Field name="dfh_bite">
+        <cd:Record>
+          <!-- field 2 common part -->
+          <cd:Field name="datafield_header_length">
+            <cd:Integer>
+              <cd:Description>Data Field Header Length</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="instrument_mode">
+          <!-- instrument_mode:
+                0x0010 = 16 = acquisition (data has acquisition blocks only)
+                0x0020 = 32 = tracking (data has at least one tracking data block)
+                0x0021 = 33 = preset tracking
+                0x0022 = 34 = preset loop
+                0x0030 = 48 = IF calibration
+                0x0041 = 65 = RF BITE
+                0x0043 = 67 = Digital BITE
+          -->
+            <cd:Integer>
+              <cd:Description>Instrument Mode</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_1">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>5</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="icu">
+            <cd:Integer>
+              <cd:Description>ICU</cd:Description>
+              <cd:Unit>1/524288 s</cd:Unit>
+              <cd:BitSize>43</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="redundancy_vector">
+            <cd:Integer>
+              <cd:Description>Redundancy Definition Vector</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_2">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>8</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="uso_datation">
+            <cd:Integer>
+              <cd:Description>USO datation</cd:Description>
+              <cd:Unit>1/100000 s</cd:Unit>
+              <cd:BitSize>40</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <!-- field 2 end of common part -->
+          <!-- field 2: data header field for instrument mode: RF-BITE or digital BITE -->
+          <cd:Field name="spare">
+            <cd:Array>
+              <cd:Dimension>47</cd:Dimension>
+              <cd:Integer>
+                <cd:BitSize>16</cd:BitSize>
+                <cd:NativeType>uint16</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+            <cd:Hidden/>
+          </cd:Field>
+          <!-- field 2: end of data header field for instrument mode: RF-BITE or digital BITE -->
+        </cd:Record>
+      </cd:Field>
+  
+      <cd:Field name="dfh_if_cal">
+        <cd:Record>
+          <!-- field 3 common part -->
+          <cd:Field name="datafield_header_length">
+            <cd:Integer>
+              <cd:Description>Data Field Header Length</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="instrument_mode">
+          <!-- instrument_mode:
+                0x0010 = 16 = acquisition (data has acquisition blocks only)
+                0x0020 = 32 = tracking (data has at least one tracking data block)
+                0x0021 = 33 = preset tracking
+                0x0022 = 34 = preset loop
+                0x0030 = 48 = IF calibration
+                0x0041 = 65 = RF BITE
+                0x0043 = 67 = Digital BITE
+          -->
+            <cd:Integer>
+              <cd:Description>Instrument Mode</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_1">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>5</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="icu">
+            <cd:Integer>
+              <cd:Description>ICU</cd:Description>
+              <cd:Unit>1/524288 s</cd:Unit>
+              <cd:BitSize>43</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="redundancy_vector">
+            <cd:Integer>
+              <cd:Description>Redundancy Definition Vector</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_2">
+           <cd:Integer>
+             <cd:Description>Spare (set to zero)</cd:Description>
+             <cd:BitSize>8</cd:BitSize>
+             <cd:NativeType>uint8</cd:NativeType>
+           </cd:Integer>
+           <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="uso_datation">
+            <cd:Integer>
+              <cd:Description>USO datation</cd:Description>
+              <cd:Unit>1/100000 s</cd:Unit>
+              <cd:BitSize>40</cd:BitSize>
+              <cd:NativeType>uint64</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <!-- field 3 end of common part -->
+          <!-- field 3: data header field for instrument mode: IF calibration -->
+          <cd:Field name="spare_3">
+            <cd:Array>
+              <cd:Dimension>28</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Spare (set to zero)</cd:Description>
+                <cd:BitSize>16</cd:BitSize>
+                <cd:NativeType>uint16</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="spare_4">
+            <cd:Integer>
+              <cd:Description>Spare (set to zero)</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+            <cd:Hidden/>
+          </cd:Field>
+          <cd:Field name="individual_echoes_flag">
+            <cd:Integer>
+              <cd:Description>Individual Echoes Flag</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare_5">
+            <cd:Array>
+              <cd:Dimension>18</cd:Dimension>
+              <cd:Integer>
+                <cd:Description>Spare (set to zero)</cd:Description>
+                <cd:BitSize>16</cd:BitSize>
+                <cd:NativeType>uint16</cd:NativeType>
+              </cd:Integer>
+            </cd:Array>
+            <cd:Hidden/>
+          </cd:Field>
+          <!-- field 3: end of data header field for instrument mode: acquisition -->
+        </cd:Record>
+      </cd:Field>
+    </cd:Union>
+  </cd:Field>
+
+  <!-- Source data --> 
+  <!-- Contains:
+         20 science data blocks of 227 words (16-bit)
+         1  calibration block of 133 words
+       if individual echoes are transmitted (`individual_echoes_flag' = 0xFF):
+         1600 echoes of 16-bits each
+    -->
+  <cd:Field name="science_data_blocks">
+    <cd:Array>
+      <cd:Dimension>20</cd:Dimension>
+
+      <!-- Science data block
+       
+       Each block has the following general layout:
+         8 bits block type + 8 bits block number
+         data / spare
+
+       The different blocks are distinguished in their block type identification:
+         0 = spare, 
+         1 = acquisition, 
+         2 = tracking, 
+         3 = IF calibration, 
+         4 = RF BITE, 
+         5 = digital BITE, 
+         6 = preset tracking, 
+         7 = preset loop output
+       -->
+
+       <cd:Union>
+         <cd:Description>Union of possible RA-2 science data blocks.</cd:Description>
+         <cd:FieldExpression><![CDATA[if (int(:/block_type) == 6 || int(:/block_type) == 7, 2, int(:/block_type))]]></cd:FieldExpression>
+   
+         <!-- block type 0: spare -->
+         <cd:Field name="spare_blk">
+           <cd:Record>
+             <cd:Field name="block_type">
+               <cd:Integer>
+                 <cd:Description>Type of block (0 = spare, 1 = acquisition, 2 = tracking, 3 = IF calibration, 4 = RF BITE, 5 = digital BITE, 6 = preset tracking, 7 = preset loop output</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="block_number">
+               <cd:Integer>
+                 <cd:Description>Number of data blocks used</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare">
+               <cd:Array>
+                 <cd:Dimension>226</cd:Dimension>
+                 <cd:Integer>
+                   <cd:Description>Spare (set to zero)</cd:Description>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+               <cd:Hidden />
+             </cd:Field>
+           </cd:Record>
+         </cd:Field>
+     
+         <!-- block type 1: general acquisition data block -->
+         <cd:Field name="gen_acq_blk">
+           <cd:Record>
+             <cd:Field name="block_type">
+               <cd:Integer>
+                 <cd:Description>Type of block (0 = spare, 1 = acquisition, 2 = tracking, 3 = IF calibration, 4 = RF BITE, 5 = digital BITE, 6 = preset tracking, 7 = preset loop output</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="block_number">
+               <cd:Integer>
+                 <cd:Description>Number of data blocks used</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="agcnpe">
+               <cd:Record>
+                 <cd:Description>AGC attenuation during execution of the NPE phase</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                     <cd:Unit>dB</cd:Unit>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="est_noise_power_1">
+               <cd:Record>
+                 <cd:Description>First estimation of averaged noise power in detection phase 1</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="est_noise_power_2">
+               <cd:Record>
+                 <cd:Description>Second estimation of averaged noise power in detection phase 2</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="det_threshold_1">
+               <cd:Record>
+                 <cd:Description>Computed detection threshold in detection phase 1</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="agc_det_1">
+               <cd:Record>
+                 <cd:Description>AGC attenuation during detection phase 1</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                     <cd:Unit>dB</cd:Unit>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="est_rx_dist_tle1">
+               <cd:Record>
+                 <cd:Description>RX distance (echo location) used to estimate the leading edge of the waveform in detection phase 1</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="det_threshold_2">
+               <cd:Record>
+                 <cd:Description>Computed detection threshold in detection phase 2</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="agc_det_2">
+               <cd:Record>
+                 <cd:Description>AGC attenuation during detection phase 2</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                     <cd:Unit>dB</cd:Unit>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="est_rx_dist_tle2">
+               <cd:Record>
+                 <cd:Description>RX distance (echo location) used to estimate the leading edge of the waveform in detection phase 2</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="avg_echo_power">
+               <cd:Record>
+                 <cd:Description>Averaged echo power used for AGC setting</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="agc_setting_agct">
+               <cd:Record>
+                 <cd:Description>Computed AGC attenuation to initialize AGC filter for tracking execution</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                     <cd:Unit>dB</cd:Unit>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="detection_samples">
+               <cd:Array>
+                 <cd:Description>Echo samples collected during detection execution</cd:Description>
+                 <cd:Dimension>192</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint32</cd:NativeType>
+                   <cd:Conversion numerator="32" denominator="1" />
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+             <cd:Field name="spare">
+               <cd:Array>
+                 <cd:Dimension>10</cd:Dimension>
+                 <cd:Integer>
+                   <cd:Description>Spare (set to zero)</cd:Description>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+               <cd:Hidden />
+             </cd:Field>
+             <cd:Field name="spare_1">
+               <cd:Integer>
+                 <cd:Description>Spare (set to zero)</cd:Description>
+                 <cd:BitSize>5</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden />
+             </cd:Field>
+             <cd:Field name="phase_id">
+               <cd:Integer>
+                 <cd:Description>Indicates whether acquisition phases have been executed or skipped</cd:Description>
+                 <cd:BitSize>3</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_2">
+               <cd:Integer>
+                 <cd:Description>Spare (set to zero)</cd:Description>
+                 <cd:BitSize>3</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden />
+             </cd:Field>
+             <cd:Field name="fault_identification">
+               <cd:Integer>
+                 <cd:Description>Fault status</cd:Description>
+                 <cd:BitSize>5</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_3">
+               <cd:Integer>
+                 <cd:Description>Spare (set to zero)</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden />
+             </cd:Field>
+             <cd:Field name="fault_identification_word">
+               <cd:Integer>
+                 <cd:Description>Indicates if a parameter, computed in the acquisition phase, was inside or outside a specified (allowed) range</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+           </cd:Record>
+         </cd:Field>
+     
+         <!-- block type 2: science measurement data block in tracking mode -->
+         <cd:Field name="trk_meas_blk">
+           <cd:Record>
+             <cd:Field name="block_type">
+               <cd:Integer>
+                 <cd:Description>Type of block (0 = spare, 1 = acquisition, 2 = tracking, 3 = IF calibration, 4 = RF BITE, 5 = digital BITE, 6 = preset tracking, 7 = preset loop output</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="block_number">
+               <cd:Integer>
+                 <cd:Description>Number of data blocks used</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="ku_band_avg_waveforms">
+               <cd:Array>
+                 <cd:Description>Ku-band averaged waveforms (unit: FFT power factor)</cd:Description>
+                 <cd:Dimension>128</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                   <cd:Conversion numerator="1" denominator="2048" />
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+             <cd:Field name="ku_band_dft">
+               <cd:Array>
+                 <cd:Description>Ku-band DFT samples</cd:Description>
+                 <cd:Dimension>2</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                   <cd:Conversion numerator="1" denominator="2048" />
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+             <cd:Field name="s_band_avg_waveforms">
+               <cd:Array>
+                 <cd:Description>S-band averaged waveforms (unit: FFT power factor)</cd:Description>
+                 <cd:Dimension>64</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                   <cd:Conversion numerator="1" denominator="8192" />
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+             <cd:Field name="w_discrimination">
+               <cd:Record>
+                 <cd:Description>Width of the discriminator computed by MFT</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="cog_discrimination">
+               <cd:Record>
+                 <cd:Description>Centre of gravity discrimination computed by MFT</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="lep_discrimination">
+               <cd:Record>
+                 <cd:Description>Leading edge position computed by MFT</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="agc_discrimination">
+               <cd:Record>
+                 <cd:Description>AGC discrimination computed by MFT</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                     <cd:Unit>dB</cd:Unit>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="agc_x_corrected">
+               <cd:Record>
+                 <cd:Description>Corrected AGC value at step n</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                     <cd:Unit>dB</cd:Unit>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="agc_x_predicted">
+               <cd:Record>
+                 <cd:Description>Predicted rate of change of AGC value at step n+1</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="dist_x_corrected">
+               <cd:Record>
+                 <cd:Description>Corrected rate of change of RX distance at step n</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>40</cd:BitSize>
+                     <cd:NativeType>int64</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="dist_x_predicted">
+               <cd:Record>
+                 <cd:Description>Predicted rate of change of RX distance at step n+1</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>40</cd:BitSize>
+                     <cd:NativeType>int64</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="rx_dist_coarse">
+               <cd:Integer>
+                 <cd:Description>First value of RX distance coarse</cd:Description>
+                 <cd:BitSize>16</cd:BitSize>
+                 <cd:NativeType>int16</cd:NativeType>
+                 <cd:Unit>12.5 ns</cd:Unit>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare">
+               <cd:Integer>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="rx_dist_fine">
+               <cd:Integer>
+                 <cd:Description>First value of RX distance fine</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:Conversion numerator="1" denominator="64">
+                 </cd:Conversion>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_2">
+               <cd:Integer>
+                 <cd:BitSize>6</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="agc_att_coarse">
+               <cd:Integer>
+                 <cd:Description>First value of AGC attenuation coarse</cd:Description>
+                 <cd:BitSize>10</cd:BitSize>
+                 <cd:NativeType>uint16</cd:NativeType>
+                 <cd:Unit>dB</cd:Unit>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="agc_att_fine">
+               <cd:Integer>
+                 <cd:Description>First value of AGC attenuation fine</cd:Description>
+                 <cd:BitSize>16</cd:BitSize>
+                 <cd:NativeType>int16</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_3">
+               <cd:Integer>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="ku_band_chirp_id">
+               <cd:Integer>
+                 <cd:Description>Selected Ku-band chirp band for this block</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="snr_lol">
+               <cd:Record>
+                 <cd:Description>Signal to noise ratio computed by loss of lock logic</cd:Description>
+                 <cd:Field name="mantisse">
+                   <cd:Integer>
+                     <cd:BitSize>24</cd:BitSize>
+                     <cd:NativeType>int32</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+                 <cd:Field name="exponent">
+                   <cd:Integer>
+                     <cd:BitSize>8</cd:BitSize>
+                     <cd:NativeType>int8</cd:NativeType>
+                   </cd:Integer>
+                 </cd:Field>
+               </cd:Record>
+             </cd:Field>
+             <cd:Field name="counter_c1">
+               <cd:Integer>
+                 <cd:Description>Counter used by resolution selection logic to control resolution increase</cd:Description>
+                 <cd:BitSize>16</cd:BitSize>
+                 <cd:NativeType>int16</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="counter_c2">
+               <cd:Integer>
+                 <cd:Description>Counter used by resolution selection logic to control resolution decrease</cd:Description>
+                 <cd:BitSize>16</cd:BitSize>
+                 <cd:NativeType>int16</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_4">
+               <cd:Array>
+                 <cd:Dimension>4</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="spare_5">
+               <cd:Integer>
+                 <cd:BitSize>3</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="fault_identifier">
+               <cd:Integer>
+                 <cd:Description>Indicates if any computed value is out of the admitted range</cd:Description>
+                 <cd:BitSize>13</cd:BitSize>
+                 <cd:NativeType>uint16</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+           </cd:Record>
+         </cd:Field>
+     
+         <!-- block type 3: IF calibration data block -->
+         <cd:Field name="if_cal_blk">
+           <cd:Record>
+             <cd:Field name="block_type">
+               <cd:Integer>
+                 <cd:Description>Type of block (0 = spare, 1 = acquisition, 2 = tracking, 3 = IF calibration, 4 = RF BITE, 5 = digital BITE, 6 = preset tracking, 7 = preset loop output</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="block_number">
+               <cd:Integer>
+                 <cd:Description>Number of data blocks used</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="ku_band_avg_waveforms">
+               <cd:Array>
+                 <cd:Description>Ku-band averaged waveforms (unit: FFT power factor)</cd:Description>
+                 <cd:Dimension>128</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                   <cd:Conversion numerator="1" denominator="2048" />
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+             <cd:Field name="spare">
+               <cd:Array>
+                 <cd:Dimension>84</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="rx_dist_coarse">
+               <cd:Integer>
+                 <cd:Description>First value of RX distance coarse</cd:Description>
+                 <cd:BitSize>16</cd:BitSize>
+                 <cd:NativeType>int16</cd:NativeType>
+                 <cd:Unit>12.5 ns</cd:Unit>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_1">
+               <cd:Integer>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="rx_dist_fine">
+               <cd:Integer>
+                 <cd:Description>First value of RX distance fine</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:Conversion numerator="1" denominator="64">
+                 </cd:Conversion>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_6">
+               <cd:Integer>
+                 <cd:BitSize>6</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="agc_att_coarse">
+               <cd:Integer>
+                 <cd:Description>First value of AGC attenuation coarse</cd:Description>
+                 <cd:BitSize>10</cd:BitSize>
+                 <cd:NativeType>uint16</cd:NativeType>
+                 <cd:Unit>dB</cd:Unit>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="agc_att_fine">
+               <cd:Integer>
+                 <cd:Description>First value of AGC attenuation fine</cd:Description>
+                 <cd:BitSize>16</cd:BitSize>
+                 <cd:NativeType>int16</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_2">
+               <cd:Integer>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+               <cd:Hidden/>
+             </cd:Field>
+             <cd:Field name="ku_band_chirp_id">
+               <cd:Integer>
+                 <cd:Description>Selected Ku-band chirp band for this block</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="spare_3">
+               <cd:Array>
+                 <cd:Dimension>9</cd:Dimension>
+                 <cd:Integer>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+               <cd:Hidden/>
+             </cd:Field>
+           </cd:Record>
+         </cd:Field>
+   
+         <!-- block type 4: science measurement data block in RF BITE mode -->
+         <cd:Field name="rfbite_meas_blk">
+           <cd:Record>
+             <cd:Field name="block_type">
+               <cd:Integer>
+                 <cd:Description>Type of block (0 = spare, 1 = acquisition, 2 = tracking, 3 = IF calibration, 4 = RF BITE, 5 = digital BITE, 6 = preset tracking, 7 = preset loop output</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="block_number">
+               <cd:Integer>
+                 <cd:Description>Number of data blocks used</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <!-- note: due to the fact that the type of block cannot be determined other than by counting,
+                  the data is made available as blocks of 16 bits. The user himself needs to implement something
+                  to interpret this data, for the time being. -->
+             <cd:Field name="block_data">
+               <cd:Array>
+                 <cd:Description>Data in blocks of 16 bits</cd:Description>
+                 <cd:Dimension>226</cd:Dimension>
+                 <cd:Integer>
+                    <cd:BitSize>16</cd:BitSize>
+                    <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+           </cd:Record>
+         </cd:Field>
+   
+         <!-- block type 5: science measurement data block in Digital BITE mode -->
+         <cd:Field name="digbite_meas_blk">
+           <cd:Record>
+             <cd:Field name="block_type">
+               <cd:Integer>
+                 <cd:Description>Type of block (0 = spare, 1 = acquisition, 2 = tracking, 3 = IF calibration, 4 = RF BITE, 5 = digital BITE, 6 = preset tracking, 7 = preset loop output</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <cd:Field name="block_number">
+               <cd:Integer>
+                 <cd:Description>Number of data blocks used</cd:Description>
+                 <cd:BitSize>8</cd:BitSize>
+                 <cd:NativeType>uint8</cd:NativeType>
+               </cd:Integer>
+             </cd:Field>
+             <!-- note: due to the fact that the type of block cannot be determined other than by counting,
+                  the data is made available as blocks of 16 bits. The user himself needs to implement something
+                  to interpret this data, for the time being. -->
+             <cd:Field name="block_data">
+               <cd:Array>
+                 <cd:Description>Data in blocks of 16 bits</cd:Description>
+                 <cd:Dimension>226</cd:Dimension>
+                 <cd:Integer>
+                    <cd:BitSize>16</cd:BitSize>
+                    <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Array>
+             </cd:Field>
+           </cd:Record>
+         </cd:Field>
+   
+      </cd:Union>
+
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="calibration_block">
+    <cd:NamedType id="RA2_ME__0P_Calibration_Data_Block" />
+  </cd:Field>
+  <cd:Field name="individual_echoes">
+    <cd:Available><![CDATA[int(./packet_header/packet_length) > 9457]]></cd:Available>
+    <cd:Array>
+      <cd:Description>Individual echo samples</cd:Description>
+      <cd:Dimension>1600</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="I">
+          <cd:Integer>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>int8</cd:NativeType>
+            <cd:Unit>1/128 V</cd:Unit>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Q">
+          <cd:Integer>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>int8</cd:NativeType>
+            <cd:Unit>1/128 V</cd:Unit>
+          </cd:Integer>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

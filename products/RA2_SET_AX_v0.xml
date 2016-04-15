@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_SET_AX_v0" format="binary" last-modified="2009-10-09"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>2</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="header">
+      <cd:Record format="ascii">
+        <cd:Field name="n20_title">
+          <cd:Text>
+            <cd:Description>N20=</cd:Description>
+            <cd:FixedValue>N20=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n20">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 20</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_1">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n21_title">
+          <cd:Text>
+            <cd:Description>N21=</cd:Description>
+            <cd:FixedValue>N21=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n21">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 21</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_2">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n22_title">
+          <cd:Text>
+            <cd:Description>N22=</cd:Description>
+            <cd:FixedValue>N22=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n22">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 22</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_3">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n30_title">
+          <cd:Text>
+            <cd:Description>N30=</cd:Description>
+            <cd:FixedValue>N30=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n30">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 30</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_4">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+         <cd:Field name="n31_title">
+          <cd:Text>
+            <cd:Description>N31=</cd:Description>
+            <cd:FixedValue>N31=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n31">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 31</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_5">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n32_title">
+          <cd:Text>
+            <cd:Description>N32=</cd:Description>
+            <cd:FixedValue>N32=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n32">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 32</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_6">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n33_title">
+          <cd:Text>
+            <cd:Description>N33=</cd:Description>
+            <cd:FixedValue>N33=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="n33">
+          <cd:Integer>
+            <cd:Description>Number of values for the order 33</cd:Description>
+            <cd:ByteSize>6</cd:ByteSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_7">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Text>
+            <cd:Description>Spare</cd:Description>
+            <cd:ByteSize>50</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_8">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="cartwright_amplitudes">
+      <cd:Record>
+        <cd:Description>Cartwright amplitudes of the tidal constituents harmonic coefficients and amplitude [i, j]</cd:Description>
+        <cd:Field name="coeff_n20">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n20)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="coeff_n21">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n21)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="coeff_n22">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n22)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="coeff_n30">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n30)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="coeff_n31">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n31)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="coeff_n32">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n32)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="coeff_n33">
+          <cd:Array>
+            <cd:Dimension><![CDATA[int(/header/n33)]]></cd:Dimension>
+            <cd:NamedType id="RA2_SET_AX_Grid_Data_GADS" />
+          </cd:Array>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

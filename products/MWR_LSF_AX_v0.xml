@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="MWR_LSF_AX_v0" format="binary" last-modified="2010-08-26"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>2</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="header">
+      <cd:Record format="ascii">
+        <cd:Field name="lat_grid_size_title">
+          <cd:Text>
+            <cd:Description>LAT_GRID_SIZE=</cd:Description>
+            <cd:FixedValue>LAT_GRID_SIZE=</cd:FixedValue>
+            <cd:ByteSize>14</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lat_grid_size">
+          <cd:Float>
+            <cd:Description>Resolution of the grid in latitude (unit: deg or min)</cd:Description>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="lat_grid_size_units">
+          <cd:Text>
+            <cd:Description>can be &lt;deg&gt; or &lt;min&gt;</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_1">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lat_first_title">
+          <cd:Text>
+            <cd:Description>LAT_FIRST=</cd:Description>
+            <cd:FixedValue>LAT_FIRST=</cd:FixedValue>
+            <cd:ByteSize>10</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lat_first">
+          <cd:Float>
+            <cd:Description>Latitude of first point on the grid (unit: deg or min)</cd:Description>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="lat_first_units">
+          <cd:Text>
+            <cd:Description>can be &lt;deg&gt; or &lt;min&gt;</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_2">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lat_last_title">
+          <cd:Text>
+            <cd:Description>LAT_LAST=</cd:Description>
+            <cd:FixedValue>LAT_LAST=</cd:FixedValue>
+            <cd:ByteSize>9</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lat_last">
+          <cd:Float>
+            <cd:Description>Latitude of last point on the grid (unit: deg or min)</cd:Description>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="lat_last_units">
+          <cd:Text>
+            <cd:Description>can be &lt;deg&gt; or &lt;min&gt;</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_3">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lon_grid_size_title">
+          <cd:Text>
+            <cd:Description>LON_GRID_SIZE=</cd:Description>
+            <cd:FixedValue>LON_GRID_SIZE=</cd:FixedValue>
+            <cd:ByteSize>14</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lon_grid_size">
+          <cd:Float>
+            <cd:Description>Resolution of the grid in longitude (unit: deg or min)</cd:Description>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="lon_grid_size_units">
+          <cd:Text>
+            <cd:Description>can be &lt;deg&gt; or &lt;min&gt;</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_4">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lon_first_title">
+          <cd:Text>
+            <cd:Description>LON_FIRST=</cd:Description>
+            <cd:FixedValue>LON_FIRST=</cd:FixedValue>
+            <cd:ByteSize>10</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lon_first">
+          <cd:Float>
+            <cd:Description>Longitude of first point on the grid (unit: deg or min)</cd:Description>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="lon_first_units">
+          <cd:Text>
+            <cd:Description>can be &lt;deg&gt; or &lt;min&gt;</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_5">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lon_last_title">
+          <cd:Text>
+            <cd:Description>LON_LAST=</cd:Description>
+            <cd:FixedValue>LON_LAST=</cd:FixedValue>
+            <cd:ByteSize>9</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="lon_last">
+          <cd:Float>
+            <cd:Description>Longitude of last point on the grid (unit: deg or min)</cd:Description>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="lon_last_units">
+          <cd:Text>
+            <cd:Description>can be &lt;deg&gt; or &lt;min&gt;</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_6">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="def_title">
+          <cd:Text>
+            <cd:Description>DEF=</cd:Description>
+            <cd:FixedValue>DEF=</cd:FixedValue>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="def">
+          <cd:Integer>
+            <cd:Description>Default value of the grid values</cd:Description>
+            <cd:ByteSize>11</cd:ByteSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="newline_char_7">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Text>
+            <cd:Description>Spare</cd:Description>
+            <cd:ByteSize>50</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_8">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="lsf">
+      <cd:Array>
+        <cd:Description>Land/sea flags [longitude, latitude]</cd:Description>
+        <cd:Dimension>10800</cd:Dimension>
+        <cd:Dimension>5400</cd:Dimension>
+        <cd:Integer>
+          <cd:Description>Land/sea flag</cd:Description>
+          <cd:BitSize>8</cd:BitSize>
+          <cd:NativeType>int8</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

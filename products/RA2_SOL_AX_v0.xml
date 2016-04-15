@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_SOL_AX_v0" format="binary" last-modified="2009-09-18"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="gadsr">
+      <cd:Array>
+        <cd:Dimension>120</cd:Dimension>
+        <cd:Description>GADS records, one per month</cd:Description>
+        <cd:Record>
+          <cd:Field name="year">
+            <cd:Integer>
+              <cd:Description>Year</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="month">
+            <cd:Integer>
+              <cd:Description>Month</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="solar_activity_index">
+            <cd:Integer>
+              <cd:Description>Value of solar activity index</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="spare">
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+            <cd:Hidden />
+          </cd:Field>
+        </cd:Record>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

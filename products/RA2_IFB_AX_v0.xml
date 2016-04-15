@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_IFB_AX_v0" format="binary" last-modified="2012-06-23"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="if_mask_file_creation_time">
+      <cd:Time timeformat="binary_envisat_datetime">
+        <cd:Description>IF mask file creation time</cd:Description>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="dsr_length">
+      <cd:Integer>
+        <cd:Description>Length of DSR in bytes</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spare_1">
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="if_mask_reference_time">
+      <cd:Time timeformat="binary_envisat_datetime">
+        <cd:Description>IF mask reference time</cd:Description>
+      </cd:Time>
+    </cd:Field>
+     <cd:Field name="spare_2">
+      <cd:Integer>
+        <cd:BitSize>21</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="obdh_datation_word">
+      <cd:Integer>
+        <cd:Description>OBDH datation word</cd:Description>
+        <cd:BitSize>43</cd:BitSize>
+        <cd:NativeType>uint64</cd:NativeType>
+        <cd:Unit>1/524288 s</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="if_corr_mask">
+      <cd:Array>
+        <cd:Description>IF correction mask samples</cd:Description>
+        <cd:Dimension>128</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>uint32</cd:NativeType>
+          <cd:Unit>1e-6</cd:Unit>
+          <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+            <cd:Unit></cd:Unit>
+          </cd:Conversion>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="rfss_redundancy_flag">
+      <cd:Integer>
+        <cd:Description>RFSS redundancy flag</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="quality_flag">
+      <cd:Integer>
+        <cd:Description>Quality flag</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="num_avg_spectra">
+      <cd:Integer>
+        <cd:Description>Number of averaged spectra</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

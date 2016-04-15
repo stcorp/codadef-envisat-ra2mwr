@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_IOC_AX_v0" format="binary" last-modified="2009-09-18"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="coefficients">
+      <cd:Array>
+        <cd:Description>Coefficients GADSR per month</cd:Description>
+        <cd:Dimension>12</cd:Dimension>
+        <cd:Record>
+          <cd:Field name="wf">
+            <cd:Array>
+              <cd:Description>WF coefficients, related to f0F2 (cricital frequency)</cd:Description>
+              <cd:Dimension>2964</cd:Dimension>
+              <cd:Float>
+                <cd:BitSize>32</cd:BitSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="wm">
+            <cd:Array>
+              <cd:Description>WM coefficients, related to M(3000)F2 (ratio of maximum usable frequency to the critical frequency)</cd:Description>
+              <cd:Dimension>882</cd:Dimension>
+              <cd:Float>
+                <cd:BitSize>32</cd:BitSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+        </cd:Record>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_CON_AX_v0" format="binary" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="configuration_file_creation_time">
+      <cd:Time timeformat="binary_envisat_datetime">
+        <cd:Description>Configuration file creation time</cd:Description>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="dsr_length">
+      <cd:Integer>
+        <cd:Description>Length of DSR in bytes</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spare_1">
+      <cd:Integer>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+      <cd:Hidden/>
+    </cd:Field>
+    <cd:Field name="if_filter_mask_correction_flag">
+      <cd:Integer>
+        <cd:Description>Flag for selection of specific IF filter mask correction processing 0</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="specific_uso_calibration_flag">
+      <cd:Integer>
+        <cd:Description>Flag for selection of specific USO calibration value</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="rx_delay_test_reference_value">
+      <cd:Array>
+        <cd:Description>Reference values for computed RX delay text</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>us</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="agc_test_reference_value">
+      <cd:Array>
+        <cd:Description>Reference values for AGC test</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="zero_padding_factor">
+      <cd:Integer>
+        <cd:Description>Zero padding factor for PTR evaluation</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ptr_shift_test_reference_value">
+      <cd:Array>
+        <cd:Description>Reference values for PTR shift test (unit: 1e-2 FFT filter units)</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ptr_power_test_reference_value">
+      <cd:Array>
+        <cd:Description>Reference values for PTR power test</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-2 dB</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="max_ptr_measurements_fly_cal_corr_ku">
+      <cd:Integer>
+        <cd:Description>Maximum number of measures derived from single PTR measurements to be averaged to get Fligt Calibration Correction Parameters for the Ku band</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_ptr_measurements_fly_cal_corr_s">
+      <cd:Integer>
+        <cd:Description>Maximum number of measures derived from single PTR measurements to be averaged to get Fligt Calibration Correction Parameters for the S band</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_cal_data_required_ku">
+      <cd:Integer>
+        <cd:Description>Minimum number of calibration data from single Ku PTR measurements required for evaluation of smooted flight calibration parameters</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_cal_data_required_s">
+      <cd:Integer>
+        <cd:Description>Minimum number of calibration data from single S PTR measurements required for evaluation of smooted flight calibration parameters</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_time_lag_in_sp_multiples_ku">
+      <cd:Integer>
+        <cd:Description>Maximum time lag in SP multiples between Ku PTR measurements</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="max_time_lag_in_sp_multiples_s">
+      <cd:Integer>
+        <cd:Description>Maximum time lag in SP multiples between S PTR measurements</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="npm_meas_scaling_factor">
+      <cd:Integer>
+        <cd:Description>Scaling multiplicative factor for NPM measurement</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>1e-2</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="hpa_default_ref_value_for_redundancy_flag">
+      <cd:Integer>
+        <cd:Description>Default reference value for redundancy flag of HPA subsystem required to manage event of unknown devocded value in Red_vec_HPA flag (0: chain A, 3: chain B)</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="rfss_default_ref_value_for_redundancy_flag">
+      <cd:Integer>
+        <cd:Description>Default reference value for redundancy flag of HPA subsystem required to manage event of unknown devocded value in Red_vec_HPA flag (0: chain A, 3: chain B)</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="num_obdh_clocks_between_source_packets">
+      <cd:Integer>
+        <cd:Description>Number of OBDH clocks between two consecutive source packets</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="tol_num_obdh_clocks">
+      <cd:Integer>
+        <cd:Description>Tolerance of number of OBDH clocks between two consecutive source packets</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="num_uso_counter_clocks">
+      <cd:Integer>
+        <cd:Description>Number of USO counter clocks between two consecutive source packets</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="tol_num_uso_counter_clocks">
+      <cd:Integer>
+        <cd:Description>Tolerance on number of USO counter clocks between two consecutive source packets</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="offset_for_data_blocks_datation_calculation">
+      <cd:Integer>
+        <cd:Description>Offset for data blocks datation calculation</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="offset_for_waveform_delay_rate_compensation">
+      <cd:Integer>
+        <cd:Description>Offset for waveform delay rate compensation</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>1e-2</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="time_lag_level_0_utc_and_if_mask_fly_cal_datation">
+      <cd:Integer>
+        <cd:Description>Time lag to compare Level 0 product UTC datation and IF mask flight calibration datation for IF mask selection</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>s</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="time_lag_level_0_utc_and_uso_cal_datation">
+      <cd:Integer>
+        <cd:Description>Time lag to compare Level 0 product UTC datation and USO calibration datation for IF mask selection</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>s</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ref_values_for_if_mask_quality_check">
+      <cd:Array>
+        <cd:Description>Rereference values for IF mask quality check</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>1e-4</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="min_num_if_noise_spectra_avg">
+      <cd:Integer>
+        <cd:Description>Minimum number of IF noise spectra to be averaged</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>int32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="num_noise_samples_skipped">
+      <cd:Integer>
+        <cd:Description>Number of noise samples skipped at edges of FFT filter bank in IF mask retrieval processing</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="num_packets_skipped_at_beginning">
+      <cd:Integer>
+        <cd:Description>Number of packets skipped at beginning of Level 0 product for IF mask retrieval processing</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ref_values_for_txrx_clock_quality_check">
+      <cd:Array>
+        <cd:Description>Reference values for TX/RX clock quality check</cd:Description>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+          <cd:Unit>ps</cd:Unit>
+        </cd:Integer>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="isp_num_in_first_prod_for_uso_cal">
+      <cd:Integer>
+        <cd:Description>ISP number in first Level 0 product selected for the USO calibration processing</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="isp_num_in_second_prod_for_uso_cal">
+      <cd:Integer>
+        <cd:Description>ISP number in second Level 0 product selected for the USO calibration processing</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="min_time_lag_between_uso_dat">
+      <cd:Integer>
+        <cd:Description>Minimum time lag between USO datation measurements needed for USO calibration processing</cd:Description>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>s</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ra2_proc_thresh">
+      <cd:Integer>
+        <cd:Description>Threshold for Level 1B SPH field RA2_PROC_THRESH</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="ra2_header_thresh">
+      <cd:Integer>
+        <cd:Description>Threshold for Level 1B SPH field RA2_HEADER_THRESH</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+        <cd:Unit>1e-2 %</cd:Unit>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="buf_len_s_band_anomaly_flag">
+      <cd:Integer>
+        <cd:Description>Buffer length for S-band anomaly flag</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="counter_s_band_anomaly_flag">
+      <cd:Integer>
+        <cd:Description>Counter for S-band anomaly flag</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="step">
+      <cd:Integer>
+        <cd:Description>Time interval used to calculate each sample of the unsmoothed clock period</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="smooth_fact">
+      <cd:Integer>
+        <cd:Description>Smoothing factor used to perform the smoothing and obtain final clock period data stream</cd:Description>
+        <cd:Unit>1e-7 ps</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="uso_corr_switch">
+      <cd:Integer>
+        <cd:Description>USO correction switch (correction run within the Level 1b or taken from the auxiliary file)</cd:Description>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="thresh_sample_value">
+      <cd:Integer>
+        <cd:Description>Threshold for the evaluation of the sample value wraparound, in the anomalous S-band waveform reconstruction algorithm (unit: FFT power units)</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>int16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="spare_2">
+      <cd:Array>
+        <cd:Dimension>9</cd:Dimension>
+        <cd:Integer>
+          <cd:BitSize>8</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Array>
+      <cd:Hidden/>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<ct:Tests last-modified="2009-12-16" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <!-- Tests on file name -->
+  <ct:Test name="FileNameCheckProduct" criticality="Warning" description="The name of the file should be consistent with the product field in the MPH"><![CDATA[filename() == str(.)]]></ct:Test>
+
+  <!-- Tests on product name -->
+  <ct:Test name="ProductNameValidFormat" criticality="Warning" description="The product name must be of the format &lt;code&gt;&lt;product_ID[10]&gt;&lt;processing_stage_flag[1]&gt;&lt;originator_ID[3]&lt;start_day[8]&gt;&lt;'_'[1]&gt;&lt;start_time[6]&gt;&lt;'_'[1]&gt;&lt;duration[8]&gt;&lt;'_'[1]&gt;&lt;phase[1]&gt;&lt;cycle[3]&gt;&lt;'_'[1]&gt;&lt;relative_orbit[5]&gt;&lt;'_'[1]&gt;&lt;absolute_orbit[5]&gt;&lt;'_'[1]&gt;&lt;counter[4]&gt;&lt;'.'[1]&gt;&lt;satellite_ID[2]&gt;&lt;.extension[]&gt;&lt;code&gt;"><![CDATA[substr(22, 1, str(.)) == "_" && substr(29, 1, str(.)) == "_" && substr(42, 1, str(.)) == "_" && substr(48, 1, str(.)) == "_" && substr(54, 1, str(.)) == "_" && substr(59, 1, str(.)) == "."]]></ct:Test>
+  <ct:Test name="ProcStageFlagMatchesProductName" criticality="Warning" description="The processing stage flag must match character 11 of the product name"><![CDATA[substr(10, 1, str(../product)) == str(.)]]></ct:Test>
+ <ct:Test name="SensingStartDayMatchesProductName" criticality="Warning" description="The sensing start day must match character 15-22 of the product name"><![CDATA[substr(14, 4, str(../product)) == substr(7, 4, str(.)) && substr(18, 2, str(../product)) == if(substr(3, 3, str(.)) == "JAN", "01", if(substr(3, 3, str(.)) == "FEB", "02", if(substr(3, 3, str(.)) == "MAR", "03", if(substr(3, 3, str(.)) == "APR", "04", if(substr(3, 3, str(.)) == "MAY", "05", if(substr(3, 3, str(.)) == "JUN", "06", if(substr(3, 3, str(.)) == "JUL", "07", if(substr(3, 3, str(.)) == "AUG", "08", if(substr(3, 3, str(.)) == "09", "SEP", if(substr(3, 3, str(.)) == "OCT", "10", if(substr(3, 3, str(.)) == "NOV", "11", if(substr(3, 3, str(.)) == "DEC", "12", "??")))))))))))) && substr(20, 2, str(../product)) == substr(0, 2, str(.))]]></ct:Test>
+  <ct:Test name="SensingStartTimeMatchesProductName" criticality="Warning" description="The sensing start time must match character 24-29 of the product name"><![CDATA[substr(23, 2, str(../product)) == substr(12, 2, str(.)) && substr(25, 2, str(../product)) == substr(15, 2, str(.)) && substr(27, 2, str(../product)) == substr(18, 2, str(.))]]></ct:Test>
+  <ct:Test name="PhaseIDMatchesProductName" criticality="Warning" description="The phase identifier field must match character 39 of the product name"><![CDATA[substr(38, 1, str(../product)) == str(.)]]></ct:Test>
+  <ct:Test name="CycleMatchesProductName" criticality="Warning" description="The cycle field must match characters 40-42 of the product name"><![CDATA[int(substr(39, 3, str(../product))) == int(str(.))]]></ct:Test>
+  <ct:Test name="RelOrbitMatchesProductName" criticality="Warning" description="The relative orbit field must match characters 44-48 of the product name"><![CDATA[int(substr(43, 5, str(../product))) == int(str(.))]]></ct:Test>
+  <ct:Test name="AbsOrbitMatchesProductName" criticality="Warning" description="The cycle field must match characters 50-54 of the product name"><![CDATA[int(substr(49, 5, str(../product))) == int(str(.))]]></ct:Test>
+  <ct:Test name="SatelliteMatchesProductName" criticality="Warning" description="Characters 61-62 of the product name must be `N1' for ENVISAT products"><![CDATA[substr(60, 2, str(.)) == "N1"]]></ct:Test>
+
+  <!-- Tests on MPH fields -->
+  <ct:Test name="ProcStageFlagValid" criticality="Warning" description="The processing stage flag must be N"><![CDATA[str(.) == "N"]]></ct:Test>
+  <ct:Test name="AcquisitionStationValid" criticality="Warning" description="The acquisition station must be PDHS-E or PDHS-K"><![CDATA[rtrim(str(.)) == "PDHS-E" || rtrim(str(.)) == "PDHS-K"]]></ct:Test>
+  <ct:Test name="ProcessingCentreValid" criticality="Warning" description="The processing centre must be PDHS-E, PDHS-K, F-PAC or LRAC"><![CDATA[rtrim(str(.)) == "PDHS-E" || rtrim(str(.)) == "PDHS-K" || rtrim(str(.)) == "F-PAC" || rtrim(str(.)) == "LRAC"]]></ct:Test>
+  <ct:Test name="SoftwareVersionLevel2MatchesCurrent" criticality="Warning" description="The software version for Level 2 must be RA-2/5.06 or RA2/6.02L04 or RA2/6.03"><![CDATA[rtrim(str(.)) == "RA2/5.06" || rtrim(str(.)) == "RA2/6.02L04" || rtrim(str(.)) == "RA2/6.03"]]></ct:Test>
+  <ct:Test name="SoftwareVersionLevel1MatchesCurrent" criticality="Warning" description="The software version for Level 1 must be RA-2/5.06 or RA2/6.02L04 or RA2/6.03"><![CDATA[rtrim(str(.)) == "RA2/5.06" || rtrim(str(.)) == "RA2/6.02L04" || rtrim(str(.)) == "RA2/6.03"]]></ct:Test>
+  <ct:Test name="SoftwareVersionLevel0MatchesCurrent" criticality="Warning" description="The software version for Level 0 must be KSPT_L0/4303 or KSPT_L0/4504"><![CDATA[rtrim(str(.)) == "KSPT_L0/4303" || rtrim(str(.)) == "KSPT_L0/4504"]]></ct:Test>
+  <ct:Test name="PhaseValid" criticality="Warning" description="The phase must be '2'"><![CDATA[str(.) == "2"]]></ct:Test>
+  <ct:Test name="VectorSourceValid" criticality="Warning" description="The vector source should be FP or DN"><![CDATA[str(.) == "FP" || str(.) == "DN"]]></ct:Test>
+  <ct:Test name="UTCToSBTNearSensingTime" criticality="Warning" description="The difference between UTC to SBT and sensing time should be less than 100 minutes"><![CDATA[abs(float(.) - float(../sensing_start))/60 < 100 || abs(float(.) - float(../sensing_stop))/60 < 100]]></ct:Test>
+  <ct:Test name="IsUnsignedInt32" criticality="Warning" description="The value should be larger than or equal to 0 and less than 2^32"><![CDATA[int(.) >= 0 && int(.) < 2^32]]></ct:Test>
+  <ct:Test name="IsNonZero" criticality="Warning" description="The value should not be equal to 0"><![CDATA[int(.) != 0]]></ct:Test>
+  <ct:Test name="IsZero" criticality="Warning" description="The value should be equal to 0"><![CDATA[int(.) == 0]]></ct:Test>
+  <ct:Test name="IsZeroChar" criticality="Warning" description="The value should be equal to '0'"><![CDATA[str(.) == "0"]]></ct:Test>
+  <ct:Test name="FileSizeMatches" criticality="Warning" description="The value should be equal to the file size"><![CDATA[int(.) == filesize()]]></ct:Test>
+  <ct:Test name="LeapUTCNotSet" criticality="Warning" description="The leap UTC must be set to all blanks (which evaluates to NaN)"><![CDATA[float(.) != nan]]></ct:Test>
+
+  <!-- Range checks -->
+  <ct:Test name="LatitudeValid" criticality="Warning" description="The latitude must be between -90 and +90 degrees (units are 1e-6 degrees)"><![CDATA[float(.) >= -90e6 && float(.) <= 90e6]]></ct:Test>
+  <ct:Test name="LongitudeValid" criticality="Warning" description="The longitude must be between -180 and +180 degrees (units are 1e-6 degrees)"><![CDATA[float(.) >= -180e6 && float(.) <= 180e6]]></ct:Test>
+  <ct:Test name="SatTrackValid" criticality="Warning" description="The satellite track must be between 0 and +360 degrees"><![CDATA[float(.) >= 0 && float(.) <= 360]]></ct:Test>
+  <ct:Test name="Level2ProcessingQualitySufficient" criticality="Warning" description="The Level 2 processing quality must be at least 9000 (90%)"><![CDATA[int(.) >= 9000]]></ct:Test>
+  <ct:Test name="Level1bProcessingQualitySufficient" criticality="Warning" description="The Level 1B processing quality must be at least 9500 (95%)"><![CDATA[int(.) >= 9000]]></ct:Test>
+  <ct:Test name="ProcessingQualitySufficient" criticality="Warning" description="The processing quality must be at least 1000 (10%)"><![CDATA[int(.) >= 1000]]></ct:Test>
+  <ct:Test name="AllMeasurementsValid" criticality="Warning" description="The number of valid measurements must be 10000 (100%)"><![CDATA[int(.) == 10000]]></ct:Test>
+  <ct:Test name="NumMeasurementsLevel1ValidAboveThreshold" criticality="Warning" description="The number of valid measurements must be at least 1000 (10%)"><![CDATA[int(.) >= 1000]]></ct:Test>
+  <ct:Test name="NumMeasurements320MHzProcessedSufficient" criticality="Warning" description="The number of measurements processed for 320 MHz band must be at least 9500 (95%)"><![CDATA[int(.) >= 9500]]></ct:Test>
+  <ct:Test name="NumMeasurements80MHzProcessedBelowThreshold" criticality="Warning" description="The number of measurements processed for 80 MHz band must not be more than 400 (4%)"><![CDATA[int(.) <= 400]]></ct:Test>
+  <ct:Test name="NumMeasurements20MHzProcessedBelowThreshold" criticality="Warning" description="The number of measurements processed for 20 MHz band must not be more than 100 (1%)"><![CDATA[int(.) <= 100]]></ct:Test>
+  <ct:Test name="NumMeasurements320MHzProcessedLevel1AboveThreshold" criticality="Warning" description="The number of measurements processed for 320 MHz band at Level 1 must be at least 9000 (90%)"><![CDATA[int(.) >= 9000]]></ct:Test>
+  <ct:Test name="NumMeasurements80MHzProcessedLevel1AboveThreshold" criticality="Warning" description="The number of measurements processed for 80 MHz band at Level 1 must be at least 700 (7%)"><![CDATA[int(.) >= 700]]></ct:Test>
+  <ct:Test name="NumMeasurements20MHzProcessedLevel1AboveThreshold" criticality="Warning" description="The number of measurements processed for 20 MHz band at Level 1 must be at least 300 (3%)"><![CDATA[int(.) >= 300]]></ct:Test>
+  <ct:Test name="NumValidMeasurementsKuOceanRetrackerAboveThreshold" criticality="Warning" description="The percentage of valid Ku ocean retracker measurements must be at least 9000 (90%)"><![CDATA[int(.) >= 9000]]></ct:Test>
+  <ct:Test name="NumValidMeasurementsKuIce1RetrackerAboveThreshold" criticality="Warning" description="The percentage of valid Ku ice1 retracker measurements must be at least 8500 (85%)"><![CDATA[int(.) >= 8500]]></ct:Test>
+  <ct:Test name="NumValidMeasurementsKuIce2RetrackerBelowThreshold" criticality="Warning" description="The percentage of valid Ku ice2 retracker measurements must not be larger than 7000 (70%)"><![CDATA[int(.) <= 7000]]></ct:Test>
+  <ct:Test name="NumValidMeasurementsKuSeaIceRetrackerBelowThreshold" criticality="Warning" description="The percentage of valid Ku sea/ice retracker measurements must not be larger than 9000 (90%)"><![CDATA[int(.) <= 9000]]></ct:Test>
+
+</ct:Tests>

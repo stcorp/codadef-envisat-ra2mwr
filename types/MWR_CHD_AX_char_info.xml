@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<cd:Record name="MWR_CHD_AX_char_info" format="binary" last-modified="2009-10-12" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="look_angle">
+    <cd:Integer>
+      <cd:Description>Look angle</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-4 rad</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beam_eff_main_antenna">
+    <cd:Integer>
+      <cd:Description>Beam efficiency of main antenna</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-2 %</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="main_antenna_refl_trans_coeff">
+    <cd:Integer>
+      <cd:Description>Main antenna reflector transmission coefficient</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sky_horn_switch_trans_coeff_a">
+    <cd:Integer>
+      <cd:Description>Sky horn transmission coefficient for hot/cold switch channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="hot_load_switch_trans_coeff_a">
+    <cd:Integer>
+      <cd:Description>Hot load transmission coefficient for hot/cold switch channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_antenna_trans_coeff_meas_cal_switch_a">
+    <cd:Integer>
+      <cd:Description>Measurement antenna transmission coefficient measure-calibration switch channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cal_trans_coeff_meas_cal_switch_a">
+    <cd:Integer>
+      <cd:Description>Calibration transmission coefficient measure-calibration switch channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_antenna_trans_coeff_dicke_switch_a">
+    <cd:Integer>
+      <cd:Description>Measurement antenna transmission coefficient Dicke switch channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cal_trans_coeff_dicke_switch_a">
+    <cd:Integer>
+      <cd:Description>Calibration transmission coefficient Dicke switch channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sky_horn_waveguides_trans_coeff_a">
+    <cd:Integer>
+      <cd:Description>Sky horn waveguides transmission coefficient channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_antenna_waveguides_trans_coeff_a">
+    <cd:Integer>
+      <cd:Description>Measurement antenna waveguides transmission coefficient channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sky_horn_feed_trans_coeff_a">
+    <cd:Integer>
+      <cd:Description>Sky horn feed transmission coefficient channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_antenna_feed_trans_coeff_a">
+    <cd:Integer>
+      <cd:Description>Measurement antenna feed transmission coefficient channel A</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sky_horn_isolation_coeff_hot_load_cal_switch_b">
+    <cd:Integer>
+      <cd:Description>Sky horn isolation coefficient hot load calibration switch channel B</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="hot_load_isolation_coeff_hot_load_switch_b">
+    <cd:Integer>
+      <cd:Description>Hot load isolation coefficient for hot load switch channel B</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_antenna_isolation_coeff_meas_cal_switch_b">
+    <cd:Integer>
+      <cd:Description>Measurement antenna isolation coefficient measure-calibration switch channel B</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cal_isolation_coeff_meas_cal_switch_b">
+    <cd:Integer>
+      <cd:Description>Calibration isolation coefficient measure-calibration switch channel B</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_antenna_isolation_coeff_dicke_switch_b">
+    <cd:Integer>
+      <cd:Description>Measurement antenna isolation coefficient Dicke switch channel B</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cal_isolation_coeff_dicke_switch_b">
+    <cd:Integer>
+      <cd:Description>Calibration isolation coefficient Dicke switch channel B</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:Unit>1e-6</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

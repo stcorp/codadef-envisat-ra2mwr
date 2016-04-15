@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_ME__0P_Calibration_Data_Block" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="spare_1">
+    <cd:Integer>
+      <cd:Description>Spare (set to zero)</cd:Description>
+      <cd:BitSize>6</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="agc_cal_a">
+    <cd:Integer>
+      <cd:Description>AGC value for Ku-band chain calibration attenuator A</cd:Description>
+      <cd:BitSize>5</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:Unit>dB</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_cal_b">
+    <cd:Integer>
+      <cd:Description>AGC value for Ku-band chain calibration attenuator B</cd:Description>
+      <cd:BitSize>5</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+      <cd:Unit>dB</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Integer>
+      <cd:Description>Spare (set to zero)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ptr_datation">
+    <cd:Integer>
+      <cd:Description>PTR datation (based on USO)</cd:Description>
+      <cd:BitSize>40</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+      <cd:Unit>10 us</cd:Unit>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ptr_samples">
+    <cd:Array>
+      <cd:Dimension>128</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="I">
+          <cd:Integer>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>int8</cd:NativeType>
+            <cd:Unit>1/128 V</cd:Unit>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="Q">
+          <cd:Integer>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>int8</cd:NativeType>
+            <cd:Unit>1/128 V</cd:Unit>
+          </cd:Integer>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="spare_3">
+    <cd:Integer>
+      <cd:Description>Spare (set to zero)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="cal_band_id">
+    <cd:Integer>
+      <cd:Description>LSB of specific chirp bandwidth calibrated</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>
+

@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_ICT_AX_v0" format="binary" last-modified="2010-08-26"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="retracker_threshold_ocog_ku_fft_power">
+      <cd:Float>
+        <cd:Description>retracker threshold OCOG Ku (unit: FFT power units)</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="retracker_threshold_ocog_s_fft_power">
+      <cd:Float>
+        <cd:Description>retracker threshold OCOG S (unit: FFT power units)</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="retracker_threshold_sea_ice_ku_fft_power">
+      <cd:Float>
+        <cd:Description>retracker threshold sea ice Ku (unit: FFT power units)</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="retracker_threshold_sea_ice_s_fft_power">
+      <cd:Float>
+        <cd:Description>retracker threshold sea ice S (unit: FFT power units)</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="retracker_start_bin_ocog_ku">
+      <cd:Integer>
+        <cd:Description>retracker start bin OCOG Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_start_bin_ocog_s">
+      <cd:Integer>
+        <cd:Description>retracker start bin OCOG S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_start_bin_sea_ice_ku">
+      <cd:Integer>
+        <cd:Description>retracker start bin sea ice Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_start_bin_sea_ice_s">
+      <cd:Integer>
+        <cd:Description>retracker start bin sea ice S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_end_bin_ocog_ku">
+      <cd:Integer>
+        <cd:Description>retracker end bin OCOG Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_end_bin_ocog_s">
+      <cd:Integer>
+        <cd:Description>retracker end bin OCOG S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_end_bin_sea_ice_ku">
+      <cd:Integer>
+        <cd:Description>retracker end bin sea ice Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_end_bin_sea_ice_s">
+      <cd:Integer>
+        <cd:Description>retracker end bin sea ice S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_lower_bound_ocog_ku">
+      <cd:Integer>
+        <cd:Description>retracker lower bound OCOG Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_lower_bound_ocog_s">
+      <cd:Integer>
+        <cd:Description>retracker lower bound OCOG S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_upper_bound_ocog_ku">
+      <cd:Integer>
+        <cd:Description>retracker upper bound OCOG Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_upper_bound_ocog_s">
+      <cd:Integer>
+        <cd:Description>retracker upper bound OCOG S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_lower_bound_sea_ice_ku">
+      <cd:Integer>
+        <cd:Description>retracker lower bound sea ice Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_lower_bound_sea_ice_s">
+      <cd:Integer>
+        <cd:Description>retracker lower bound sea ice S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_upper_bound_sea_ice_ku">
+      <cd:Integer>
+        <cd:Description>retracker upper bound sea ice Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="retracker_upper_bound_sea_ice_s">
+      <cd:Integer>
+        <cd:Description>retracker upper bound sea ice S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="additional_end_gate1_ku">
+      <cd:Integer>
+        <cd:Description>additional end gate1 Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="additional_end_gate1_s">
+      <cd:Integer>
+        <cd:Description>additional end gate1 S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="additional_power_threshold_ku">
+      <cd:Float>
+        <cd:Description>additional power threshold Ku</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="additional_power_threshold_s">
+      <cd:Float>
+        <cd:Description>additional power threshold S</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="additional_gate_threshold_ku">
+      <cd:Float>
+        <cd:Description>additional gate threshold Ku</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="additional_gate_threshold_s">
+      <cd:Float>
+        <cd:Description>additional gate threshold S</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="noise_power_first_gate_ku">
+      <cd:Integer>
+        <cd:Description>noise power first gate Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="noise_power_first_gate_s">
+      <cd:Integer>
+        <cd:Description>noise power first gate S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="noise_power_last_gate_ku">
+      <cd:Integer>
+        <cd:Description>noise power last gate Ku</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="noise_power_last_gate_s">
+      <cd:Integer>
+        <cd:Description>noise power last gate S</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+    <cd:Field name="peakiness_low_threshold">
+      <cd:Float>
+        <cd:Description>peakiness low threshold</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="peakiness_high_threshold">
+      <cd:Float>
+        <cd:Description>peakiness high threshold</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

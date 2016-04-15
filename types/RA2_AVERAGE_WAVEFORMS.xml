@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_AVERAGE_WAVEFORMS" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>18 Hz Waveforms MDS</cd:Description>
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Time stamp</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 for blank MDSR, 0 otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="src_pack_cnt">
+    <cd:Integer>
+      <cd:Description>Source Packet Counter</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>64</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="data_blk_info">
+    <cd:Array>
+      <cd:Description>Data Block information for each of the 20 data blocks</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="ave_ku_wvforms_if">
+          <cd:Array>
+            <cd:Description>Average Ku band waveforms corrected for IF transfer function (128 samples)</cd:Description>
+            <cd:Dimension>128</cd:Dimension>
+            <cd:Integer>
+              <cd:Unit>1/2048</cd:Unit>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="cen_ku_dft_if">
+          <cd:Array>
+            <cd:Description>Central Ku band filters from DFT corrected for IF transfer function (2 samples)</cd:Description>
+            <cd:Dimension>2</cd:Dimension>
+            <cd:Integer>
+              <cd:Unit>1/2048</cd:Unit>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ave_s_wvforms_if">
+          <cd:Array>
+            <cd:Description>Average S band waveforms corrected for IF transfer function (64 samples)</cd:Description>
+            <cd:Dimension>64</cd:Dimension>
+            <cd:Integer>
+              <cd:Unit>1/8192</cd:Unit>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ind_2_dft_samp">
+          <cd:Array>
+            <cd:Description>Indexes of 2 DFT samples (64 samples)</cd:Description>
+            <cd:Dimension>2</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="offset_fft_filt">
+          <cd:Integer>
+            <cd:Description>Delta offset in FFT filters units</cd:Description>
+            <cd:Unit>1/256</cd:Unit>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="spare_1">
+          <cd:Raw>
+            <cd:Description>Spare</cd:Description>
+            <cd:BitSize>144</cd:BitSize>
+          </cd:Raw>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="noise_pow_meas">
+          <cd:Integer>
+            <cd:Description>Noise power measurement</cd:Description>
+            <cd:Unit>1/2048</cd:Unit>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="agc_noise_pow_meas">
+          <cd:Integer>
+            <cd:Description>AGC of noise power measurement</cd:Description>
+            <cd:Unit>1e-2 dB</cd:Unit>
+            <cd:Conversion numerator="1.000000" denominator="100.000000">
+              <cd:Unit>dB</cd:Unit>
+            </cd:Conversion>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="ref_pow_val">
+          <cd:Integer>
+            <cd:Description>reference power value</cd:Description>
+            <cd:Unit>1e-2 dB</cd:Unit>
+            <cd:Conversion numerator="1.000000" denominator="100.000000">
+              <cd:Unit>dB</cd:Unit>
+            </cd:Conversion>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="spare_2">
+          <cd:Raw>
+            <cd:Description>Spare</cd:Description>
+            <cd:BitSize>80</cd:BitSize>
+          </cd:Raw>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

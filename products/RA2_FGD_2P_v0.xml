@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_FGD_2P_v0" format="binary" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="RA2_MWR_Level_2_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension><![CDATA[$num_dsd]]></cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="ra2_mds">
+      <cd:Array>
+        <cd:Description>RA-2 MDS (from the GDR product)</cd:Description>
+        <cd:Dimension><![CDATA[$num_dsr[0]]]></cd:Dimension>
+        <cd:NamedType id="RA2_DATA_SET_FOR_LEVEL_2_NRT"/>
+      </cd:Array>
+      <cd:Available><![CDATA[$ds_available[0] != 0]]></cd:Available>
+      <cd:BitOffset><![CDATA[$ds_offset[0]]]></cd:BitOffset>
+    </cd:Field>
+    <cd:Field name="mwr_mds">
+      <cd:Array>
+        <cd:Description>RA-2 MWR MDS</cd:Description>
+        <cd:Dimension><![CDATA[$num_dsr[1]]]></cd:Dimension>
+        <cd:NamedType id="MWR_DATA_SET_FOR_LEVEL_2"/>
+      </cd:Array>
+      <cd:Available><![CDATA[$ds_available[1] != 0]]></cd:Available>
+      <cd:BitOffset><![CDATA[$ds_offset[1]]]></cd:BitOffset>
+    </cd:Field>
+    <!-- MPH checks -->
+    <ct:NamedTest id="FileNameCheckProduct" path="mph/product" />
+    <ct:NamedTest id="ProductNameValidFormat" path="mph/product" />
+    <ct:NamedTest id="ProcStageFlagMatchesProductName" path="mph/proc_stage" />
+    <ct:NamedTest id="ProcStageFlagValid" path="mph/proc_stage" />
+    <ct:NamedTest id="AcquisitionStationValid" path="mph/acquisition_station" />
+    <ct:NamedTest id="ProcessingCentreValid" path="mph/proc_center" />
+    <ct:NamedTest id="SoftwareVersionLevel2MatchesCurrent" path="mph/software_ver" />
+    <ct:NamedTest id="SensingStartDayMatchesProductName" path="mph/sensing_start" />
+    <ct:NamedTest id="SensingStartTimeMatchesProductName" path="mph/sensing_start" />
+    <ct:NamedTest id="PhaseIDMatchesProductName" path="mph/phase" />
+    <ct:NamedTest id="PhaseValid" path="mph/phase" />
+    <ct:NamedTest id="CycleMatchesProductName" path="mph/cycle" />
+    <ct:NamedTest id="RelOrbitMatchesProductName" path="mph/rel_orbit" />
+    <ct:NamedTest id="AbsOrbitMatchesProductName" path="mph/abs_orbit" />
+    <ct:NamedTest id="SatelliteMatchesProductName" path="mph/product" />
+    <ct:NamedTest id="VectorSourceValid" path="mph/vector_source" />
+    <ct:NamedTest id="UTCToSBTNearSensingTime" path="mph/utc_sbt_time" />
+    <ct:NamedTest id="IsUnsignedInt32" path="mph/sat_binary_time" />
+    <ct:NamedTest id="IsUnsignedInt32" path="mph/clock_step" />
+    <ct:NamedTest id="LeapUTCNotSet" path="mph/leap_utc" />
+    <ct:NamedTest id="IsZero" path="mph/leap_err" />
+    <ct:NamedTest id="IsZero" path="mph/product_err" />
+    <ct:NamedTest id="FileSizeMatches" path="mph/tot_size" />
+    <!-- SPH checks -->
+    <ct:NamedTest id="LatitudeValid" path="sph/ra2_first_lat" />
+    <ct:NamedTest id="LatitudeValid" path="sph/ra2_last_lat" />
+    <ct:NamedTest id="IsZeroChar" path="sph/ra2_l2_proc_flag" />
+    <ct:NamedTest id="IsZeroChar" path="sph/ra2_l1b_proc_flag" />
+    <ct:NamedTest id="Level2ProcessingQualitySufficient" path="sph/ra2_l2_processing_quality" />
+    <ct:NamedTest id="Level1bProcessingQualitySufficient" path="sph/ra2_l1b_processing_quality" />
+    <ct:NamedTest id="AllMeasurementsValid" path="sph/ra2_measurement_percent" />
+    <ct:NamedTest id="NumMeasurements320MHzProcessedSufficient" path="sph/ra2_320_band_percent" />
+    <ct:NamedTest id="NumMeasurements80MHzProcessedBelowThreshold" path="sph/ra2_80_band_percent" />
+    <ct:NamedTest id="NumMeasurements20MHzProcessedBelowThreshold" path="sph/ra2_20_band_percent" />
+    <ct:NamedTest id="NumValidMeasurementsKuOceanRetrackerAboveThreshold" path="sph/ra2_ocean_ku_retrack_percent" />
+    <ct:NamedTest id="NumValidMeasurementsKuIce1RetrackerAboveThreshold" path="sph/ra2_ice1_ku_retrack_percent" />
+    <ct:NamedTest id="NumValidMeasurementsKuIce2RetrackerBelowThreshold" path="sph/ra2_ice2_ku_retrack_percent" />
+    <ct:NamedTest id="NumValidMeasurementsKuSeaIceRetrackerBelowThreshold" path="sph/ra2_seaice_ku_retrack_percent" />
+  </cd:Record>
+  <cd:ProductVariable name="num_dsd">
+    <cd:Init><![CDATA[$num_dsd = int(/mph/num_dsd)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_ds">
+    <cd:Init><![CDATA[$num_ds = 2]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_to_dsd_index">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[$ds_to_dsd_index[0] = index(/dsd, str(./ds_name) == "RA2_DATA_SET_FOR_LEVEL_2    "); $ds_to_dsd_index[1] = index(/dsd, str(./ds_name) == "MWR_DATA_SET_FOR_LEVEL_2    ")]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_available">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_available[i] = if($ds_to_dsd_index[i] != -1 && !(bytes(/dsd[$ds_to_dsd_index[i]]/filename, 8) == "NOT USED" || bytes(/dsd[$ds_to_dsd_index[i]]/filename, 7) == "MISSING"), 1, 0)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_offset">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_offset[i] = 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_offset)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $num_dsr[i] = int(/dsd[$ds_to_dsd_index[i]]/num_dsr)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

@@ -1,0 +1,531 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_SCIENCE_LEVEL_1B" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>RA-2 Main MDS MDSR</cd:Description>
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>MDSR Time stamp. Time fields based on UTC are computed for each record and referred to the center of the averaged waveform</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 for blank MDSR, 0 otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="obdh_data_wd">
+    <cd:Integer>
+      <cd:Description>(43 bits) The datatation timing words are transcriptions of the words provided in the source packet, and thus does not change for the 20 records comprising a source packet.</cd:Description>
+      <cd:Unit>1/524288 s</cd:Unit>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="uso_data_wd">
+   <cd:Integer>
+      <cd:Description>(40 bits) Decoded from the secondary packet header of each source packet, and thus does not change for the 20 seconds comprising a source packet.</cd:Description>
+      <cd:Unit>10 microsec</cd:Unit>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rec_cnt">
+   <cd:Integer>
+      <cd:Description>Record Counter.</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sour_seq_cnt">
+   <cd:Integer>
+      <cd:Description>Source Sequence Count. Extracted from the header of the source packet, and thus does not change for the 20 records comprising a source packet.</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="data_blk_num">
+   <cd:Integer>
+      <cd:Description>Data Block Number</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lat">
+    <cd:Integer>
+      <cd:Description>Geodetic Latitude (positive N, negative S)</cd:Description>
+      <cd:Unit>1e-6 degrees_north</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_north</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lon">
+    <cd:Integer>
+      <cd:Description>Longitude (positive E, 0 at Greenwich, negative W)</cd:Description>
+      <cd:Unit>1e-6 degrees_east</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_east</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alt_anten_ellip">
+    <cd:Integer>
+      <cd:Description>Altitude of CoG above reference ellipsoid (from best available orbit)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="instant_ht_rate">
+    <cd:Integer>
+      <cd:Description>Instantaneous height rate derived from orbit</cd:Description>
+      <cd:Unit>mm/s</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="instr_oper_id_flags">
+    <cd:Integer>
+      <cd:Description>Instrument operations identification.</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="level1b_proc_meas_conf_flags">
+    <cd:Integer>
+      <cd:Description>Level 1B processing Measurement Confidence Data.</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ave_ku_wvform_corr">
+    <cd:Array>
+      <cd:Description>Average Ku-band waveform corrected for IF transfer function.</cd:Description>
+      <cd:Dimension>128</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1/2048</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cen_ku_filter_dft_corr">
+    <cd:Array>
+      <cd:Description>Central Ku-band filters from DFT corrected for IF transfer function.</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1/2048</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ave_s_wvform_corr">
+    <cd:Array>
+      <cd:Description>Average S-band waveforms corrected for IF transfer function.</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1/8192</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ind_2add_dft_samp">
+    <cd:Array>
+      <cd:Description>Indexes of the two additional DFT samples</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>int16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ku_win_delay">
+    <cd:Integer>
+      <cd:Description>Ku-band Window Delay</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_win_delay">
+    <cd:Integer>
+      <cd:Description>S-band Window Delay</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_agc">
+    <cd:Integer>
+      <cd:Description>Ku-band AGC</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_agc">
+    <cd:Integer>
+      <cd:Description>S-band AGC</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rx_dist_c">
+    <cd:Integer>
+      <cd:Description>RX dist C</cd:Description>
+      <cd:Unit>12.5 ns</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rx_dist_f">
+    <cd:Integer>
+      <cd:Description>RX dist F</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_3">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_scale_fac">
+    <cd:Integer>
+      <cd:Description>Ku-band scaling factor for sigma zero evaluation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_scale_fac">
+    <cd:Integer>
+      <cd:Description>S-band scaling factor for sigma zero evaluation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_time_delay_fly_cal">
+    <cd:Integer>
+      <cd:Description>Ku time delay flight calibration factor</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_time_delay_fly_cal">
+    <cd:Integer>
+      <cd:Description>S time delay flight calibration factor</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_sig_zero_fly_cal">
+    <cd:Integer>
+      <cd:Description>Ku sigma zero flight calibration factor</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_sig_zero_fly_cal">
+    <cd:Integer>
+      <cd:Description>S sigma zero flight calibration factor</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_ku_fly_cal_eval">
+    <cd:Integer>
+      <cd:Description>Number of measures for Ku flight calibration factor evaluation</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_s_fly_cal_eval">
+    <cd:Integer>
+      <cd:Description>Number of measures for S flight calibration factor evaluation</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_corr_ku_s_band">
+    <cd:Integer>
+      <cd:Description>AGC correction factor for Ku and S bands</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_4">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>48</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_dopp_comp">
+    <cd:Integer>
+      <cd:Description>Ku-band Doppler compensation</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_dopp_comp">
+    <cd:Integer>
+      <cd:Description>S-band Doppler compensation</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="noise_pow_meas">
+    <cd:Integer>
+      <cd:Description>Noise power measurement</cd:Description>
+      <cd:Unit>1/2048</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_val_noise">
+    <cd:Integer>
+      <cd:Description>AGC value of noise power measurement</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_5">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>96</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="width_discrim_fft">
+    <cd:Integer>
+      <cd:Description>Width discriminator in FFT filter units (unit: 1/256 FFT filter)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cen_discrim_fft">
+    <cd:Integer>
+      <cd:Description>Centre of gravity discriminator in FFT filter units (unit: 1/256 FFT filter)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lead_edge_pos_discrim_fft">
+    <cd:Integer>
+      <cd:Description>Leading Edge Position discriminator in FFT filter units (unit: 1/256 FFT filter)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="doffs_fft">
+    <cd:Integer>
+      <cd:Description>Doffset in FFT filter units (unit: 1/256 FFT filter)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_discrim">
+    <cd:Integer>
+      <cd:Description>AGC discriminator</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ref_power_val">
+    <cd:Integer>
+      <cd:Description>Reference Power value</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_pred_rate">
+    <cd:Integer>
+      <cd:Description>AGC predicted rate</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="agc_corr_val">
+    <cd:Integer>
+      <cd:Description>AGC corrected value</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="time_delay_pred">
+    <cd:Integer>
+      <cd:Description>Time delay predicted rate</cd:Description>
+      <cd:Unit>ps/s</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="time_delay_corr">
+    <cd:Integer>
+      <cd:Description>Time delay corrected value</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="snr_lol_logic">
+    <cd:Integer>
+      <cd:Description>SNR Loss-of-lock logic</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="trak_interpol_nd_agc">
+    <cd:Integer>
+      <cd:Description>Tracking filters interpolator offset Nd_AGC</cd:Description>
+      <cd:Unit>1/100</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="trak_interpol_nd_trk">
+    <cd:Integer>
+      <cd:Description>Tracking filters interpolator offset Nd_Trk</cd:Description>
+      <cd:Unit>1/100</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mft_thresh">
+    <cd:Integer>
+      <cd:Description>MFT Threshold</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="re_logic_1_cnt">
+    <cd:Integer>
+      <cd:Description>Resolution Selection Logic first counter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="re_logic_2_cnt">
+    <cd:Integer>
+      <cd:Description>Resolution Selection Logic second counter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_coeff_dist_fil">
+    <cd:Integer>
+      <cd:Description>alfa coefficient for on-board distance filter</cd:Description>
+      <cd:Unit>-0.000001</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_coeff_dist_fil">
+    <cd:Integer>
+      <cd:Description>beta coefficient for on-board distance filter</cd:Description>
+      <cd:Unit>-0.000001</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alfa_coeff_agc_fil">
+    <cd:Integer>
+      <cd:Description>alfa coefficient for on-board AGC filter</cd:Description>
+      <cd:Unit>-0.000001</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="beta_coeff_agc_fil">
+    <cd:Integer>
+      <cd:Description>beta coefficient for on-board AGC filter</cd:Description>
+      <cd:Unit>-0.000001</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="delta_alfa_1_sf">
+    <cd:Integer>
+      <cd:Description>delta-alfa 1 on-board scaling factor for S band AGC evaluation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="delta_alfa_2_sf">
+    <cd:Integer>
+      <cd:Description>delta-alfa 2 on-board scaling factor for S band AGC evaluation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="delta_alfa_3_sf">
+    <cd:Integer>
+      <cd:Description>delta-alfa 3 on-board scaling factor for S band AGC evaluation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_6">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="uso_clock_smoot">
+    <cd:Integer>
+      <cd:Description>USO clock smooth</cd:Description>
+      <cd:Unit>1e-6 ps</cd:Unit>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="uso_corr_qual_flag">
+    <cd:Integer>
+      <cd:Description>USO correction quality flag</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

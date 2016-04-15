@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_SET_AX_Grid_Data_GADS" last-modified="2009-10-09" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="k1">
+    <cd:Integer>
+      <cd:Description>Harmonic coefficient k1</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="k2">
+    <cd:Integer>
+      <cd:Description>Harmonic coefficient k2</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="k3">
+    <cd:Integer>
+      <cd:Description>Harmonic coefficient k3</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="k4">
+    <cd:Integer>
+      <cd:Description>Harmonic coefficient k4</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="k5">
+    <cd:Integer>
+      <cd:Description>Harmonic coefficient k5</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="k6">
+    <cd:Integer>
+      <cd:Description>Harmonic coefficient k6</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="amplitude">
+    <cd:Float>
+      <cd:Description>Amplitude</cd:Description>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>double</cd:NativeType>
+      <cd:Unit>m</cd:Unit>
+    </cd:Float>
+  </cd:Field>
+</cd:Record>

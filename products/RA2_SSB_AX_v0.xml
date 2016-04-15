@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_SSB_AX_v0" format="binary" last-modified="2009-10-09"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>2</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="header">
+      <cd:Record format="ascii">
+        <cd:Field name="swh_grid_size_title">
+          <cd:Text>
+            <cd:Description>SWH_GRID_SIZE=</cd:Description>
+            <cd:FixedValue>SWH_GRID_SIZE=</cd:FixedValue>
+            <cd:ByteSize>14</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="swh_grid_size">
+          <cd:Float>
+            <cd:Description>Resolution of the grid in SWH (dSWH)</cd:Description>
+            <cd:Unit>m</cd:Unit>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="swh_grid_size_units">
+          <cd:Text>
+            <cd:Description>m</cd:Description>
+            <cd:ByteSize>3</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_1">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="swh_first_title">
+          <cd:Text>
+            <cd:Description>SWH_FIRST=</cd:Description>
+            <cd:FixedValue>SWH_FIRST=</cd:FixedValue>
+            <cd:ByteSize>10</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="swh_first">
+          <cd:Float>
+            <cd:Description>SWH of first point on the grid (SWHFf)</cd:Description>
+            <cd:Unit>m</cd:Unit>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="swh_first_units">
+          <cd:Text>
+            <cd:Description>m</cd:Description>
+            <cd:ByteSize>3</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_2">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="swh_last_title">
+          <cd:Text>
+            <cd:Description>SWH_LAST=</cd:Description>
+            <cd:FixedValue>SWH_LAST=</cd:FixedValue>
+            <cd:ByteSize>9</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="swh_last">
+          <cd:Float>
+            <cd:Description>SWH of last point on the grid (SWHl)</cd:Description>
+            <cd:Unit>m</cd:Unit>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="swh_last_units">
+          <cd:Text>
+            <cd:Description>m</cd:Description>
+            <cd:ByteSize>3</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_3">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="ws_grid_size_title">
+          <cd:Text>
+            <cd:Description>WS_GRID_SIZE=</cd:Description>
+            <cd:FixedValue>WS_GRID_SIZE=</cd:FixedValue>
+            <cd:ByteSize>13</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="ws_grid_size">
+          <cd:Float>
+            <cd:Description>Resolution of the grid in wind speed (dWS)</cd:Description>
+            <cd:Unit>m/s</cd:Unit>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="ws_grid_size_units">
+          <cd:Text>
+            <cd:Description>m/s</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_4">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="ws_first_title">
+          <cd:Text>
+            <cd:Description>WS_FIRST=</cd:Description>
+            <cd:FixedValue>WS_FIRST=</cd:FixedValue>
+            <cd:ByteSize>9</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="ws_first">
+          <cd:Float>
+            <cd:Description>Wind speed of first point on the grid (WSf)</cd:Description>
+            <cd:Unit>m/s</cd:Unit>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="ws_first_units">
+          <cd:Text>
+            <cd:Description>m/s</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_5">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="ws_last_title">
+          <cd:Text>
+            <cd:Description>WS_LAST=</cd:Description>
+            <cd:FixedValue>WS_LAST=</cd:FixedValue>
+            <cd:ByteSize>8</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="ws_last">
+          <cd:Float>
+            <cd:Description>Wind speed of last point on the grid (WSl)</cd:Description>
+            <cd:Unit>m/s</cd:Unit>
+            <cd:ByteSize>15</cd:ByteSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="ws_last_units">
+          <cd:Text>
+            <cd:Description>m/s</cd:Description>
+            <cd:ByteSize>5</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_6">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Text>
+            <cd:Description>Spare</cd:Description>
+            <cd:ByteSize>50</cd:ByteSize>
+            <cd:NativeType>string</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+        <cd:Field name="newline_char_8">
+          <cd:Text>
+            <cd:Description>newline</cd:Description>
+            <cd:FixedValue>\n</cd:FixedValue>
+            <cd:ByteSize>1</cd:ByteSize>
+            <cd:NativeType>char</cd:NativeType>
+          </cd:Text>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="ssb_corrections">
+      <cd:Array>
+        <cd:Description>Sea state bias corrections [SWH, WS, Ku/S]</cd:Description>
+        <cd:Dimension>49</cd:Dimension>
+        <cd:Dimension>101</cd:Dimension>
+        <cd:Dimension>2</cd:Dimension>
+        <cd:Float>
+          <cd:Description>Sea state bias correction</cd:Description>
+          <cd:Unit>m</cd:Unit>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+        </cd:Float>
+      </cd:Array>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

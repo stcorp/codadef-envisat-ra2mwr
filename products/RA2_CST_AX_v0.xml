@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_CST_AX_v0" format="binary" last-modified="2009-09-18"
+  xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>1</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="wgs84_semi_major_axis">
+      <cd:Float>
+        <cd:Description>Semi-major axis of WGS84 ellipsoid</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="wgs84_semi_minor_axis">
+      <cd:Float>
+        <cd:Description>Semi-minor axis of WGS84 ellipsoid</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="wgs84_inverse_of_flattening_coeff">
+      <cd:Float>
+        <cd:Description>Inverse of flattening coefficient of WGS84 ellipsoid</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="pi">
+      <cd:Float>
+        <cd:Description>Pi</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="velocity_of_light">
+      <cd:Float>
+        <cd:Description>Velocity of light</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="mean_satellite_altitude">
+      <cd:Float>
+        <cd:Description>Mean satellite altitude</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="cold_space_temperature_channel_1">
+      <cd:Float>
+        <cd:Description>Cold space temperature for channel 1</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="cold_space_temperature_channel_2">
+      <cd:Float>
+        <cd:Description>Cold space temperature for channel 2</cd:Description>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Field>
+    <cd:Field name="spare">
+      <cd:Array>
+        <cd:Dimension>3</cd:Dimension>
+        <cd:Float>
+          <cd:BitSize>64</cd:BitSize>
+          <cd:NativeType>double</cd:NativeType>
+        </cd:Float>
+      </cd:Array>
+      <cd:Hidden/>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

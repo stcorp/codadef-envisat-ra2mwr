@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="MWR_ISP_Data_Frame" last-modified="2009-08-12" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="digital_housekeeping_1">
+    <cd:Integer>
+      <cd:Description>Part of Digital Housekeeping</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cal_status_bits">
+    <cd:Integer>
+      <cd:Description>Calibration Status Bits</cd:Description>
+      <cd:BitSize>3</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="line_counter_lsb">
+    <cd:Integer>
+      <cd:Description>Line Counter (LSB)</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="calibration_frame">
+    <cd:Integer>
+      <cd:Description>Calibration Frame</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="channel_A_measurements">
+    <cd:Integer>
+      <cd:Description>Channel A Measurements (23.8 GHz)</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="icu_redundancy_status">
+    <cd:Integer>
+      <cd:Description>ICU Redundancy Status</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="digital_housekeeping_2">
+    <cd:Integer>
+      <cd:Description>Part of Digital Housekeeping</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blanking_pulse_status">
+    <cd:Integer>
+      <cd:Description>Blanking Pulse Status</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="channel_B_measurements">
+    <cd:Integer>
+      <cd:Description>Channel B Measurements (36.5 GHz)</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="st_pbp">
+    <cd:Integer>
+      <cd:Description>Status of RF FE Power Bus Protection: ST_PBP</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="st_olp">
+    <cd:Integer>
+      <cd:Description>CV 2 Overload and Overvoltage Protection Status: ST_OLP</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+   <cd:Integer>
+     <cd:Description>Spare (set to zero)</cd:Description>
+     <cd:BitSize>1</cd:BitSize>
+     <cd:NativeType>uint8</cd:NativeType>
+   </cd:Integer>
+   <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="programmer_mode">
+    <cd:Integer>
+      <cd:Description>Programmer Mode</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temperatures">
+    <cd:Integer>
+      <cd:Description>Temperatures</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

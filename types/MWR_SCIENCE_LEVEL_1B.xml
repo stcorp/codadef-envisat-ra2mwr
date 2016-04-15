@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="MWR_SCIENCE_LEVEL_1B" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>MWR MDS MDSRs</cd:Description>
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Data Record Time</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 for blank MDSR, 0 otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="lat">
+    <cd:Integer>
+      <cd:Description>Geodetic Latitude (positive N, negative S)</cd:Description>
+      <cd:Unit>1e-6 degrees_north</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_north</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lon">
+    <cd:Integer>
+      <cd:Description>Longitude (positive E, 0 at Greenwich, negative W)</cd:Description>
+      <cd:Unit>1e-6 degrees_east</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_east</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rec_cnt">
+   <cd:Integer>
+      <cd:Description>Record Counter.</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="meas_conf_level_1b_flags">
+    <cd:Integer>
+      <cd:Description>Measurement Confidence Data Level 1B/2</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_3">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="spare_4">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="brgt_temp_238">
+    <cd:Integer>
+      <cd:Description>23.8 GHz brightness temperature</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="brgt_temp_sd_238">
+    <cd:Integer>
+      <cd:Description>23.8 GHz brightness temperature standard deviation</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="brgt_temp_365">
+    <cd:Integer>
+      <cd:Description>36.5 GHz brightness temperature</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="brgt_temp_sd_365">
+    <cd:Integer>
+      <cd:Description>36.5 GHz brightness temperature standard deviation</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_5">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="mwr_instr_flags">
+    <cd:Integer>
+      <cd:Description>MWR instrument flags</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_num_avg_samples_238ghz">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, number of averaged samples (23.8 GHz channel)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_num_avg_samples_365ghz">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, number of averaged samples (36.5 GHz channel)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_num_outputs_since_last_cal">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, number of outputs since last calibration period</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_packet_tel_cnt_238ghz">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, packet telemetry counter (23.8 GHz channel)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_packet_tel_cnt_365ghz">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, packet telemetry counter (36.5 GHz channel)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_source_packet_id_238ghz">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, source packet ID (23.8 GHz channel)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_source_packet_id_365hz">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, source packet ID (36.5 GHz channel)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_proc_moving_win_size">
+    <cd:Integer>
+      <cd:Description>MWR Processing information, moving window size</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ra2_qual_interpol_flg">
+    <cd:Integer>
+      <cd:Description>RA-2 quality interpolation flag</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_6">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="wvapour_content">
+    <cd:Integer>
+      <cd:Description>Water vapour content (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>1e-2 g/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>g/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="liq_water_content">
+    <cd:Integer>
+      <cd:Description>Liquid water content (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>1e-2 kg/m2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>kg/m2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_wet_tropo_corr">
+    <cd:Integer>
+      <cd:Description>MWR derived wet tropospheric correction (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_ra2_wind_spd">
+    <cd:Integer>
+      <cd:Description>Interpolated RA2 wind speed (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>mm/s</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_ra2_ku_ocn_coeff">
+    <cd:Integer>
+      <cd:Description>Interpolated RA2 Ku-band corrected ocean backscatter coefficient (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_ra2_s_ocn_coeff">
+    <cd:Integer>
+      <cd:Description>Interpolated RA2 S-band corrected ocean backscatter coefficient (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_ra2_ku_wv_ht">
+    <cd:Integer>
+      <cd:Description>Interpolated RA2 Ku-band significant wave height (filled in Level 2 processing, set to zero for Level 1B)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_7">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>

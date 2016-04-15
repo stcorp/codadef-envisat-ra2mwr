@@ -1,0 +1,2521 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="RA2_SOI_AX_v1" format="binary" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension>11</cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="node_a11">
+      <cd:Record>
+        <cd:Field name="centre_avg_measurement">
+          <cd:Float>
+            <cd:Description>Centre of the averaged measurement</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="num_ku_fft_samples">
+          <cd:Integer>
+            <cd:Description>Number of Ku band FFT samples</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="num_ku_dft_samples">
+          <cd:Integer>
+            <cd:Description>Number of Ku band DFT samples</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="total_num_ku_wvfrm_samples">
+          <cd:Integer>
+            <cd:Description>Total number of Ku band waveforms samples</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="total_num_s_wvfrm_samples">
+          <cd:Integer>
+            <cd:Description>Total number of S band wavefroms samples</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="dft_abscissa_numbering_offset">
+          <cd:Integer>
+            <cd:Description>DFT abscissa numbering offset</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="rad_dist_land_contamination_corruption">
+          <cd:Float>
+            <cd:Description>Radial distance away from nadir point at which land contamination would be sufficient to corrupt the path delay by 5 mm</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden />
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a12">
+      <cd:Record>
+        <cd:Field name="compatibility_thresh_pole_location_data">
+          <cd:Float>
+            <cd:Description>Compatibility threshold for the pole location data</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>s</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="thresh_meteo_data_nominal_interpolation">
+          <cd:Float>
+            <cd:Description>Threshold for meteo data nominal interpolation</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>s</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="thresh_meteo_data_degraded_interpolation">
+          <cd:Float>
+            <cd:Description>Threshold for meteo data degraded interpolation</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>s</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="thresh_meteo_data_extrapolation">
+          <cd:Float>
+            <cd:Description>Threshold for meteo data extrapolation</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="exp_val_indicator_meteo_parameters">
+          <cd:Array>
+            <cd:Dimension>6</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Expected values of the indicator for meteo parameters</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="num_vert_levels_extract_from_profiles">
+          <cd:Integer>
+            <cd:Description>Expected values of the indicator for meteo parameters</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden />
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a21">
+      <cd:Record>
+        <cd:Field name="min_exp_abscissa_central_sample_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum expected abscissa of the central sample - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_exp_abscissa_central_sample_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum expected abscissa of the central sample - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="option_for_thermal_noise_computation_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Option for thermal noise computation - ice2</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="abscissa_of_first_sample_for_noise_est_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Abscissa of the first sample for noise estimation - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="abscissa_of_last_sample_for_noise_est_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Abscissa of the last sample for noise estimation - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_abscissa_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum abscissa of the leading edge - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="therm_noise_wght_factor_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Thermal noise weighting factor for leading edge id - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_abscissa_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum abscissa for leading edge evaluation - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="leading_edge_width_threshold_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Leading edge width threshold - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_left_gap_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum left gap of the leading edge - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="thermal_noise_wght_factor_for_est_cond_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Thermal noise weighting factor for estim. conditions - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="left_shift_beginning_of_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Left shift of the beginning of the leading edge - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="right_shift_end_of_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Right shift of the end of the leading edge - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_abscissa_est_window_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum abscissa of the estimation window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_abscissa_est_window_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum abscissa of the estimation window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="right_offset_est_window_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Right offset of the estimation window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_abscissa_slope_window_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum abscissa of the slope window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_abscissa_slope_window_for_mispointing_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum abscissa of the slope window for mispointing - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="width_of_first_slope_window_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Width of the first slope window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="width_of_second_slope_window_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Width of the second slope window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="width_of_slope_window_for_mispointing_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Width of the slope window for mispointing - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="initial_value_of_residual_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Initial value of the residual - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_expected_width_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum expected width of the leading edge - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_expected_width_leading_edge_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum expected width of the leading edge - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="step_for_fine_estimation_of_epoch_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Step for the fine estimation of epoch - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="step_for_fine_estimation_of_sigma_l_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Step for the fine estimation of sigma L - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="default_thermal_noise_level_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Default thermal noise level - ice2 (unit: FFT power unit)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="limit_argument_for_erf_function">
+          <cd:Float>
+            <cd:Description>Limit argument for the erf function - ice2</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="factor_applied_to_wf_maximum_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Factor applied to the WF maximum to obtain the LE threshold - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_abscissa_of_mispointing_estimation_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum abscissa of the mispointing estimation - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="maximum_abscissa_of_the_mispointing_estimation_ice2">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum abscissa of the mispointing estimation - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Dimension>32</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a22">
+      <cd:Record>
+        <cd:Field name="skewness_coeffient_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Skewness coefficient - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_exp_abscissa_central_sample_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum expected abscissa of the central sample - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_exp_abscissa_central_sample_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum expected abscissa of the central sample - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="option_for_thermal_noise_computation_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Option for thermal noise computation - ocean</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="abscissa_of_first_sample_for_noise_est_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Abscissa of the first sample for noise estimation - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="abscissa_of_last_sample_for_noise_est_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Abscissa of the last sample for noise estimation - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="width_amplitude_window_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Width of the amplitude window - ice2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="abscissa_of_first_sample_for_est_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Abscissa of the first sample for estimation - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="abscissa_of_last_sample_for_est_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Abscissa of the last sample for estimation - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="therm_noise_wght_factor_for_estim_cond_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Thermal noise weighting factor for estim. conditions - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ice2_mqe_threshold_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Ice2 MQE threshold - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="weighting_factor_for_ampl_est_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Weighting factor for amplitude estimation - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="normalised_ampl_thresh_for_epoch_init_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Normalised amplitude threshold for epoch init. - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="default_sigma_c_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Default value of SigmaC - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_num_it_for_uniform_lse_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Maximum number of iterations for the uniform LSE - ocean</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="uniform_weighting_constant_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Uniform weighting constant - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+
+        <cd:Field name="min_val_adapt_gain_lambda_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum value of the adaptative gain Lambda - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_val_adapt_gain_lambda_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum value of the adaptative gain Lambda - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="width_fine_est_window_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Width of the fine estimation window - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="half_width_leading_edge_wght_zone_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Half width of the leading edge weighting zone - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_0_weight_coeff_first_plateau_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 0 weighting coef. for the first plateau - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_1_weight_coeff_first_plateau_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 1 weighting coef. for the first plateau - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_2_weight_coeff_first_plateau_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 2 weighting coef. for the first plateau - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_3_weight_coeff_first_plateau_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 3 weighting coef. for the first plateau - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_4_weight_coeff_first_plateau_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 4 weighting coef. for the first plateau - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_5_weight_coeff_first_plateau_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 5 weighting coef. for the first plateau - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_0_weight_coeff_leading_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 0 weighting coef. for the leading edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_1_weight_coeff_leading_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 1 weighting coef. for the leading edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_2_weight_coeff_leading_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 2 weighting coef. for the leading edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_3_weight_coeff_leading_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 3 weighting coef. for the leading edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_4_weight_coeff_leading_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 4 weighting coef. for the leading edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_5_weight_coeff_leading_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 5 weighting coef. for the leading edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_0_weight_coeff_trailing_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 0 weighting coef. for the trailing edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_1_weight_coeff_trailing_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 1 weighting coef. for the trailing edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_2_weight_coeff_trailing_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 2 weighting coef. for the trailing edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_3_weight_coeff_trailing_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 3 weighting coef. for the trailing edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_4_weight_coeff_trailing_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 4 weighting coef. for the trailing edge - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="order_5_weight_coeff_trailing_edge_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Order 5 weighting coef. for the trailing edge -ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="first_initial_value_mqe_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>First initial value of the MQE - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="second_initial_value_mqe_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Second initial value of the MQE - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_num_iterations_weighted_lse_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Maximum number of iterations of the weighted LSE - ocean</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_swh_in_estimation_process_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Minimum SWH value in the estimation process - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>m</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="max_swh_in_estimation_process_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Maximum SWH value in the estimation process - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="min_num_iterations_in_estim_process_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Minimum number of iterations in the estim. process - ocean</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="threshold_of_mqe_ratio_testing_ocean">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Threshold of the MQE ratio testing - ocean</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a24">
+      <cd:Record>
+        <cd:Field name="mqe_threshold">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>MQE threshold</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="avg_threshold_for_altimeter_range">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Averaging threshold for the altimeter range</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="avg_threshold_for_significant_waveheight">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Averaging threshold for the significant waveheight</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="avg_threshold_for_backscatter_coeff">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Averaging threshold for the backscatter coefficient</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="avg_threshold_for_off_nadir_angle">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Averaging threshold for the off-nadir angle</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="wght_factor_alt_range_ed">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Weighting factor for altimeter range edition</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="wght_factor_significant_waveheight_ed">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Weighting factor for significant waveheight edition</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="wght_factor_backsc_coeff_ed">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Weighting factor for backscatter coefficient edition</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="wght_factor_off_nadir_angle_ed">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Weighting factor for off-nadir angle edition</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="spare_1">
+          <cd:Array>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Description>Spare</cd:Description>
+            <cd:Integer>
+              <cd:Description>Spare</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden />
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a31">
+      <cd:Record>
+       <cd:Field name="max_val_sol_flux">
+          <cd:Float>
+            <cd:Description>Maximum value of solar flux</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>1e-22 W/(m^2 Hz)</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="max_order_devel_f0f2_longitude">
+          <cd:Integer>
+            <cd:Description>Maximum order of the devel. of f0F2 geographical function in longitude</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="max_index_f0f2_order_m">
+          <cd:Array>
+            <cd:Dimension>9</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Param. giving the maximum indexes of f0F2 functions for an order m</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="nmax">
+          <cd:Integer>
+            <cd:Description>NMAX</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="subset_f0f2_providing_m3000f2_func">
+          <cd:Array>
+            <cd:Dimension>10</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Param. defining subset of f0F2 functions providing M(3000)F2 func</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="num_harmonics_in_f0f2_and_m3000f2">
+          <cd:Array>
+            <cd:Dimension>2</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Number of harmonics in the development of f0F2 and M(3000)F2</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="north_magnetic_pole_lat">
+          <cd:Float>
+            <cd:Description>Latitude of the North magnetic pole</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>radians</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="north_magnetic_pole_lon">
+          <cd:Float>
+            <cd:Description>Longitude of the North magnetic pole</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>radians</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="hdr_table_ymtab_for_ym_calc_hloc">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table YMTAB for the calculation of YM in hloc</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>hour</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_ymtab_for_ym_calc_f0f2">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table YMTAB for the calculation of YM in f0F2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>MHz</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ym_12_values_9">
+          <cd:Array>
+            <cd:Dimension>108</cd:Dimension>
+            <cd:Float>
+              <cd:Description>12 values of YM [9]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>km</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_yrat1_for_rat1_calc_dsza">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table YRAT1 for the calculation of RAT1 in DSZA</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>degrees</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_yrat1_for_rat1_calc_hloc">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table YRAT1 for the calculation of RAT1 in hloc</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>hour</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="yrat1_7_values_4">
+          <cd:Array>
+            <cd:Dimension>28</cd:Dimension>
+            <cd:Float>
+              <cd:Description>7 values of YRAT1 [4]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_yrat2_for_rat2_calc_dsza">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table YRAT2 for the calculation of RAT2 in DSZA</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>degrees</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_yrat2_for_rat2_calc_hloc">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table YRAT2 for the calculation of RAT2 in hloc</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>hour</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="yrat2_7_values_2">
+          <cd:Array>
+            <cd:Dimension>14</cd:Dimension>
+            <cd:Float>
+              <cd:Description>7 values of YRAT2 [2]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="scale_factor_threshold_yt">
+          <cd:Float>
+            <cd:Description>Scale factor threshold for YT</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="crit_freq_threshold_yt">
+          <cd:Float>
+            <cd:Description>Critical frequency threshold for YT</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>MHz</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="hdr_tables_slop_and_cept_in_fqf2">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of tables SLOP and CEPT in fqF2</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>MHz</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_tables_slop_and_cept_in_phim">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of tables SLOP and CEPT in φm</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>degrees</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="slop_1_4_values_3">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of SLOP(1) [3]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="slop_2_4_values_3">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of SLOP(2) [3]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="slop_3_4_values_3">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of SLOP(3) [3]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="cept_1_4_values_3">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of CEPT(1) [3]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="cept2_4_values_3">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of CEPT(2) [3]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="cept3_4_values_3">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of CEPT(3) [3]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_ratk_for_rat1_calc_dsza">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table RATK for the calculation of RAT1 in DSZA</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>degrees</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_table_ratk_for_rat1_calc_hloc">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of table RATK for the calculation of RAT1 in hloc</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>hour</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ratk1_4_values_4">
+          <cd:Array>
+            <cd:Dimension>16</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of RATK(1) [4]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ratk2_4_values_4">
+          <cd:Array>
+            <cd:Dimension>16</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of RATK(2) [4]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ratk3_4_values_4">
+          <cd:Array>
+            <cd:Dimension>16</cd:Dimension>
+            <cd:Float>
+              <cd:Description>4 values of RATK(3) [4]</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="spare_2">
+          <cd:Array>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Description>Spare</cd:Description>
+            <cd:Integer>
+              <cd:Description>Spare</cd:Description>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a32">
+      <cd:Record>
+        <cd:Field name="interpolation_win_size_mss">
+          <cd:Integer>
+            <cd:Description>Interpolation windows size for MSS</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="interpolation_win_size_geoid">
+          <cd:Integer>
+            <cd:Description>Interpolation windows size for geoid</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="spare_3">
+          <cd:Array>
+            <cd:Description>Spare</cd:Description>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a33">
+      <cd:Record>
+        <cd:Field name="freq_astro_variables">
+          <cd:Array>
+            <cd:Dimension>5</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Frequencies of the astronomical variables at 1/1/1900 0h (mean longitude of the moon, mean longitude of the sun, mean longitude of the lunar perigee, opposite of the mean longitude of the lunar ascending node, mean longitude of the solar perigee)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>degrees/day</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="phase_atro_variables">
+          <cd:Array>
+            <cd:Dimension>5</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Phases of the astronomical variables at 1/1/1900 0h (mean longitude of the moon, mean longitude of the sun, mean longitude of the lunar perigee, opposite of the mean longitude of the lunar ascending node, mean longitude of the solar perigee)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>degrees</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sol_1_admit_coeff_a_9_to_25">
+          <cd:Array>
+            <cd:Dimension>17</cd:Dimension>
+            <cd:Float>
+              <cd:Description>solution 1 admittance coefficients ‘a’ for a tidal wave number 9 to 25</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="idx_sol_1_admit_coeff_a_9_to_25">
+          <cd:Array>
+            <cd:Dimension>17</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>indexes of solution 1 admittance cofficients ‘a’ for a tidal wave number 9 to 25</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sol_1_admit_coeff_b_9_to_25">
+          <cd:Array>
+            <cd:Dimension>17</cd:Dimension>
+            <cd:Float>
+              <cd:Description>solution 1 admittance coefficients ‘b’ for a tidal wave number 9 to 25</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="idx_sol_1_admit_coeff_b_9_to_25">
+          <cd:Array>
+            <cd:Dimension>17</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>indexes of solution 1 admittance cofficients ‘b’ for a tidal wave number 9 to 25</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sol_1_admit_coeff_c_9_to_25">
+          <cd:Array>
+            <cd:Dimension>17</cd:Dimension>
+            <cd:Float>
+              <cd:Description>solution 1 admittance coefficients ‘c’ for a tidal wave number 9 to 25</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="idx_sol_1_admit_coeff_c_9_to_25">
+          <cd:Array>
+            <cd:Dimension>17</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>indexes of solution 1 admittance cofficients ‘c’ for a tidal wave number 9 to 25</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="freq_sol_1_tidal_wave_1_to_25">
+          <cd:Array>
+            <cd:Dimension>25</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Frequency of the solution 1 tidal wave number 1 to 25</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>radians/s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sol_2_admit_coeff_a_12_to_29">
+          <cd:Array>
+            <cd:Dimension>18</cd:Dimension>
+            <cd:Float>
+              <cd:Description>solution 2 admittance coefficients ‘a’ for a tidal wave number 12 to 29</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="idx_sol_2_admit_coeff_a_12_to_29">
+          <cd:Array>
+            <cd:Dimension>18</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>indexes of solution 2 admittance coefficients ‘a’ for tidal wave number 12 to 29</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sol_2_admit_coeff_b_12_to_29">
+          <cd:Array>
+            <cd:Dimension>18</cd:Dimension>
+            <cd:Float>
+              <cd:Description>solution 2 admittance coefficients ‘b’ for tidal wave number 12 to 29</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="idx_sol_2_admit_coeff_b_12_to_29">
+          <cd:Array>
+            <cd:Dimension>18</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>indexes of solutiom 2 admittance coefficients ‘b’ for tidal wave number 12 to 29</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sol_2_admit_coeff_c_12_to_29">
+          <cd:Array>
+            <cd:Dimension>18</cd:Dimension>
+            <cd:Float>
+              <cd:Description>solution 2 admittance coefficients ‘c’ for tidal wave number 12 to 29</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="idx_sol_2_admit_coeff_c_12_to_29">
+          <cd:Array>
+            <cd:Dimension>18</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>indexes of solutiom 2 admittance coefficients ‘c’ for tidal wave number 12 to 29</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="freq_sol_2_tidal_wave_1_to_29">
+          <cd:Array>
+            <cd:Dimension>29</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Frequency of the solution 2 tidal wave number 1 to 29</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>radians/s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="avg_pole_coordinate_x">
+          <cd:Float>
+            <cd:Description>X averaged pole coordinate</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>arcseconds</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="avg_pole_coordinate_y">
+          <cd:Float>
+            <cd:Description>Y averaged pole coordinate</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>arcseconds</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="love_numbers">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Love numbers (H2, K2, H3, K3)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="scale_amplitude_factor">
+          <cd:Float>
+            <cd:Description>Scale amplitude</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="gravity">
+          <cd:Float>
+            <cd:Description>Gravity</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m/s2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Description>Spare</cd:Description>
+            <cd:Dimension>24</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a34">
+      <cd:Record>
+        <cd:Field name="time_intervals_for_mwr">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Time intervals for MWR (interp, extrap, no gap)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="hdr_wind_table">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of the wind table (res, min, max)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="ra2_wind_speed_table">
+          <cd:Array>
+            <cd:Dimension>74</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Tabulated values of RA-2 windspeed</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>m/s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="oxygen_attenuation">
+          <cd:Array>
+            <cd:Dimension>2</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Oxygen attenuation (Ku and S)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="water_vapour_absorption">
+          <cd:Array>
+            <cd:Dimension>2</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Water Vapour absorption (Ku and S)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB/(g.cm-2)</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="cloud_liquid_water_absorption">
+          <cd:Array>
+            <cd:Dimension>2</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Cloud Liquid Water absorption (Ku and S)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB/(kg.m-2)</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="clim_value_water_vapour_content">
+          <cd:Float>
+            <cd:Description>Climatological value for water vapour content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>g.cm-2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="clim_value_cloud_liquid_water_content">
+          <cd:Float>
+            <cd:Description>Climatological value for cloud liquid water content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>kg/m2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="clim_value_ku_band_backscat_coeff">
+          <cd:Float>
+            <cd:Description>Climatological value for Ku-Band backscatter coeff.</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="time_intervals_ra2">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Time intervals for RA2 (interp, extrap, no gap</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>s</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="rain_flag_coefficient">
+          <cd:Float>
+            <cd:Description>Rain flag coefficient</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="liquid_content_threshold">
+          <cd:Float>
+            <cd:Description>Liquid content threshold</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>kg/m2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="delta_sigma0_diff_threshold">
+          <cd:Float>
+            <cd:Description>Delta sigma0 difference threshold</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="header_of_expected_ku_band_sigma0">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Header of the expected Ku-band sigma0 (res,min,max)</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="table_values_expected_ku_band_sigma0">
+          <cd:Array>
+            <cd:Dimension>500</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Tabulated values of expected Ku-Band sigma0</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="table_values_uncertainty_expected_ku_band_sigma0">
+          <cd:Array>
+            <cd:Dimension>500</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Tabulated values of uncertainty of expected Ku-Band sigma0</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+              <cd:Unit>dB</cd:Unit>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="number_of_neurons">
+          <cd:Integer>
+            <cd:Description>Number of neurons</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="mean_sigma0_ku_band">
+          <cd:Float>
+            <cd:Description>Mean value for sigma0 in Ku band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_sigma0_ku_band">
+          <cd:Float>
+            <cd:Description>Standard deviation value for sigma0 in Ku band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_tb23">
+          <cd:Float>
+            <cd:Description>Mean value for TB23</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>K</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_tb23">
+          <cd:Float>
+            <cd:Description>Standard deviation value for TB23</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>K</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_tb36">
+          <cd:Float>
+            <cd:Description>Mean value for TB36</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>K</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_tb36">
+          <cd:Float>
+            <cd:Description>Standard deviation value for TB36</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>K</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_atmospheric_attenuation_ku_band">
+          <cd:Float>
+            <cd:Description>Mean value for the atmospheric attenuation in Ku band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_atmospheric_attenuation_ku_band">
+          <cd:Float>
+            <cd:Description>Standard deviation value for the atmospheric attenuation in Ku-band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="w1_sigma0_weights_atmo_att_ku_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_sigma0, weights applied to Sigma0_Ku at the first layer of the MWR neural network for the atmospheric attenuation in Ku-band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb23_weights_atmo_att_ku_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB23 weights applied to TB23 at the first layer of the MWR neural network for the atmospheric attenuation in Ku-band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb36_weights_atmo_att_ku_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB36 weights applied to TB36 at the first layer of the MWR neural network for the atmospheric attenuation in Ku-band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w2_weights_atmo_att_ku_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W2, weights applied at the second layer of the MWR neural network, for the atmospheric attenuation in Ku-Band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias1_atmo_att_ku_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Bias1, bias applied at the first layer of the MWR neural network, for the atmospheric attenuation in Ku-Band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias2_atmo_att_ku_band">
+          <cd:Float>
+            <cd:Description>Bias2, bias applied at the first layer of the MWR neural network, for the atmospheric attenuation in Ku-Band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_atmo_att_s_band">
+          <cd:Float>
+            <cd:Description>Mean value for the atmospheric attenuation in S band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_atmo_att_s_band">
+          <cd:Float>
+            <cd:Description>Standard deviation value for the atmospheric attenuation in S band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="w1_sigma0_weights_atmo_att_s_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_sigma0 weights applied to sigma0_Ku at the first layer of the MWR neural network for the atmospheric attenuation in S-band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb23_weights_atmo_att_s_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB23 weights applied to TB23 at the first layer of the MWR neural network for the atmospheric attenuation in S-band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb36_weights_atmo_att_s_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB36 weights applied to TB36 at the first layer of the MWR neural network for the atmospheric attenuation in S-band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w2_weights_atmo_att_s_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W2, weights applied at the second layer of the MWR neural network, for the atmospheric attenuation in S- Band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias1_atmo_att_s_band">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Bias1, bias applied at the first layer of the MWR neural network, for the atmospheric attenuation in S- Band</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias2_atmo_att_s_band">
+          <cd:Float>
+            <cd:Description>Bias2, bias applied at the first layer of the MWR neural network, for the atmospheric attenuation in S- Band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_wet_tropospheric_correction">
+          <cd:Float>
+            <cd:Description>Mean value for the wet tropospheric correction</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>cm</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_wet_tropospheric_correction">
+          <cd:Float>
+            <cd:Description>Standard deviation for the wet tropospheric correction</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>cm</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="w1_sigma0_weights_wet_tropo_corr">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_sigma0 weights applied to sigma0_Ku at the first layer of the MWR neural network for the wet tropospheric correction</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb23_weights_wet_tropo_corr">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB23 weights applied to TB23 at the first layer of the MWR neural network for the wet tropospheric correction</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb36_weights_wet_tropo_corr">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB36 weights applied to TB36 at the first layer of the MWR neural network for the wet tropospheric correction</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w2_weights_wet_tropo_corr">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W2, weights applied at the second layer of the MWR neural network, for the wet tropospheric correction</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias1_wet_tropo_corr">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Bias1, bias applied at the first layer of the MWR neural network, for the wet tropospheric correction</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias2_wet_tropo_corr">
+          <cd:Float>
+            <cd:Description>Bias2, bias applied at the first layer of the MWR neural network, for the wet tropospheric correction</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_water_vapour_content">
+          <cd:Float>
+            <cd:Description>Mean value for the water vapour content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>g/cm2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_water_vapour_content">
+          <cd:Float>
+            <cd:Description>Standard deviation value for the water vapour content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>g/cm2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="w1_sigma0_weights_water_vapour_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_sigma0 weights applied to sigma0_Ku at the first layer of the MWR neural network for the water vapour content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb23_weights_water_vapour_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB23 weights applied to TB23 at the first layer of the MWR neural network for the water vapour content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb36_weights_water_vapour_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB36 weights applied to TB36 at the first layer of the MWR neural network for the water vapour content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w2_weights_water_vapour_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W2, weights applied at the second layer of the MWR neural network, for the water vapour content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias1_water_vapour_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Bias1, bias applied at the first layer of the MWR neural network, for the water vapour content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias2_water_vapour_content">
+          <cd:Float>
+            <cd:Description>Bias2, bias applied at the first layer of the MWR neural network, for the water vapour content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_liquid_water_content">
+          <cd:Float>
+            <cd:Description>Mean value for the liquid water content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>mg/cm2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="stddev_liquid_water_content">
+          <cd:Float>
+            <cd:Description>Standard deviation value for the liquid water content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>mg/cm2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="w1_sigma0_weights_liquid_water_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_sigma0 weights applied to sigma0_Ku at the first layer of the MWR neural network for the liquid water content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb23_weights_liquid_water_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB23 weights applied to TB23 at the first layer of the MWR neural network for the liquid water content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w1_tb36_weights_liquid_water_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W1_TB36 weights applied to TB36 at the first layer of the MWR neural network for the liquid water content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="w2_weights_liquid_water_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>W2, weights applied at the second layer of the MWR neural network, for the liquid water content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias1_liquid_water_content">
+          <cd:Array>
+            <cd:Dimension>8</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Bias1, bias applied at the first layer of the MWR neural network, for the liquid water content</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="bias2_liquid_water_content">
+          <cd:Float>
+            <cd:Description>Bias2, bias applied at the first layer of the MWR neural network, for the liquid water content</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="slope_sigma0">
+          <cd:Float>
+            <cd:Description>Slope applied to sigma0_Ku inside the MWR neural network</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="bias_sigma0">
+          <cd:Float>
+            <cd:Description>Bias applied to sigma0_Ku inside the MWR neural network</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="slope_tb23">
+          <cd:Float>
+            <cd:Description>Slope applied to TB23 inside the MWR neural network</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="bias_tb23">
+          <cd:Float>
+            <cd:Description>Bias applied to TB23 inside the MWR neural network</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="slope_tb36">
+          <cd:Float>
+            <cd:Description>Slope applied to TB36 inside the MWR neural network</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="bias_tb36">
+          <cd:Float>
+            <cd:Description>Bias applied to TB36 inside the MWR neural network</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="delta_offset_to_sigma0_s_band">
+          <cd:Float>
+            <cd:Description>Delta offset to be applied to sigma 0 in S-Band</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>dB</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="num_row_inside_mask">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Description>Number of row inside the mask</cd:Description>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="day_of_season">
+          <cd:Array>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Description>Day of the season</cd:Description>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="mask_winter_north">
+          <cd:Array>
+            <cd:Dimension>14</cd:Dimension>
+            <cd:Description>Mask winter North</cd:Description>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="mask_summer_north">
+          <cd:Array>
+            <cd:Dimension>14</cd:Dimension>
+            <cd:Description>Mask summer North</cd:Description>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="mask_winter_south">
+          <cd:Array>
+            <cd:Dimension>14</cd:Dimension>
+            <cd:Description>Mask winter South</cd:Description>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="mask_summer_south">
+          <cd:Array>
+            <cd:Dimension>14</cd:Dimension>
+            <cd:Description>Mask summer South</cd:Description>
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>int16</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="m_var">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Description>M_var</cd:Description>
+            <cd:Float>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="std_var">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Description>Std_var</cd:Description>
+            <cd:Float>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="c">
+          <cd:Array>
+            <cd:Dimension>12</cd:Dimension>
+            <cd:Description>C</cd:Description>
+            <cd:Float>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="alpha">
+          <cd:Integer>
+            <cd:Description>C</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="K">
+          <cd:Integer>
+            <cd:Description>K</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>int16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="min_val">
+          <cd:Float>
+            <cd:Description>Min_val</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Description>Spare</cd:Description>
+            <cd:Dimension>32</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a35">
+      <cd:Record>
+        <cd:Field name="coeff_for_inv_barom_height_calc">
+          <cd:Float>
+            <cd:Description>Coef. for inverted barometer height calculation</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>mm/hPa</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="gravity_at_mss_and_45_lat">
+          <cd:Float>
+            <cd:Description>Gravity at mean sea level and 45° latitude</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>m/s2</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="tetens_coeff_for_sat_water_vapour_wrt_ice">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Coefficients of Tetens formula for saturation water vapour with respect to ice</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="tetens_coeff_for_sat_water_vapour_wrt_liquid_water">
+          <cd:Array>
+            <cd:Dimension>3</cd:Dimension>
+            <cd:Float>
+              <cd:Description>Coefficients of Tetens formula for saturation water vapour with respect to liquid water</cd:Description>
+              <cd:BitSize>64</cd:BitSize>
+              <cd:NativeType>double</cd:NativeType>
+            </cd:Float>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="molar_mass_dry_air">
+          <cd:Float>
+            <cd:Description>Molar mass of dry air</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>kg</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="molar_mass_water_vapour">
+          <cd:Float>
+            <cd:Description>Molar mass of water vapour</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>kg</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mean_vert_grad_temperature">
+          <cd:Float>
+            <cd:Description>Mean vertical gradient of temperature</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>K/m</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="pressure_21_standard_vert_levels_ecmwf">
+          <cd:Array>
+            <cd:Dimension>21</cd:Dimension>
+            <cd:Integer>
+              <cd:Description>Pressure corresponding to the 21 standard vertical levels of the ECMWF model</cd:Description>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>int32</cd:NativeType>
+              <cd:Unit>hPa</cd:Unit>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="universal_gas_constant">
+          <cd:Float>
+            <cd:Description>Universal gas constant</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+            <cd:Unit>J/mole.K</cd:Unit>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="mult_constant_for_wet_tropo_corr">
+          <cd:Float>
+            <cd:Description>Multiplicative constant for wet tropospheric correction</cd:Description>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Description>Spare</cd:Description>
+            <cd:Dimension>40</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+    <cd:Field name="node_a41">
+      <cd:Record>
+        <cd:Field name="num_avg_waveforms_ku_band">
+          <cd:Integer>
+            <cd:Description>Number of averaged waveforms in Ku band</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="min_acceptable_perc_of_ra2_proc_error_free_dsr">
+          <cd:Integer>
+            <cd:Description>Minimum acceptable percentage of RA2 processing error free DSR</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+            <cd:Unit>1e-2 %</cd:Unit>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="min_acceptable_perc_of_mwr_proc_error_free_dsr">
+          <cd:Integer>
+            <cd:Description>Minimum acceptable percentage of MWR processing error free DSR</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+            <cd:Unit>1e-2 %</cd:Unit>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="threshold_for_s_band_flag_anomaly">
+          <cd:Integer>
+            <cd:Description>Threshold for S-Band flag anomaly</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="spare">
+          <cd:Array>
+            <cd:Description>Spare</cd:Description>
+            <cd:Dimension>36</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+          <cd:Hidden/>
+        </cd:Field>
+      </cd:Record>
+    </cd:Field>
+  </cd:Record>
+</cd:ProductDefinition>

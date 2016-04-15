@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_PTR_DATA" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>RA-2 Point Target Response MDS</cd:Description>
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Data Record Time</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 for blank MDSR, 0 otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="obdh_data_wd">
+    <cd:Integer>
+      <cd:Description>(43 bits) The datatation timing words are transcriptions of the words provided in the source packet, and thus does not change for the 20 records comprising a source packet.</cd:Description>
+      <cd:Unit>1/524288 s</cd:Unit>
+      <cd:BitSize>64</cd:BitSize>
+      <cd:NativeType>uint64</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ptr_cnt">
+   <cd:Integer>
+      <cd:Description>PTR Counter</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ptr_samp">
+    <cd:Array>
+      <cd:Description>128 Normalized PTR Processed Samples.</cd:Description>
+      <cd:Dimension>128</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1/65536</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ptr_cal_band_id">
+    <cd:Integer>
+      <cd:Description>PTR Calibration Band Identifier</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_cal_corr_flag">
+    <cd:Integer>
+      <cd:Description>Ku Calibration Corrections Identifier</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_cal_corr_flag">
+    <cd:Integer>
+      <cd:Description>S Calibration Corrections Identifier</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="time_delay_cal_corr_ku">
+    <cd:Integer>
+      <cd:Description>Time delay Calibration Correction (Ku Band)</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="gain_cal_corr_ku">
+    <cd:Integer>
+      <cd:Description>Gain Calibration Control (Ku Band)</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="time_delay_cal_corr_s">
+    <cd:Integer>
+      <cd:Description>Time delay Calibration Correction (S Band)</cd:Description>
+      <cd:Unit>ps</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="gain_cal_corr_s">
+    <cd:Integer>
+      <cd:Description>Gain Calibration Control (S Band)</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_ku_fly_cal_eval">
+    <cd:Integer>
+      <cd:Description>Number of measures for Ku Flight calib.</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_s_fly_cal_eval">
+    <cd:Integer>
+      <cd:Description>Number of measures for S Flight calib.</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rfss_redun_flag">
+    <cd:Integer>
+      <cd:Description>RFSS Redundancy Flag: 0 = chain A, 3 = chain B.</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="hpa_redun_flag">
+    <cd:Integer>
+      <cd:Description>HPA Redundancy Flag: 0 = chain A, 3 = chain B.</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_3">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>48</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>

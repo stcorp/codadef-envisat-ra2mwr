@@ -1,0 +1,1009 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="RA2_OCEAN_DATA_FOR_LEVEL_2" last-modified="2011-01-25" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>Ra2 - MDS</cd:Description>
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>MDSR Time stamp. Time fields based on UTC are computed for each record and referred to the center of the averaged waveform</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 for blank MDSR, 0 otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="lat">
+    <cd:Integer>
+      <cd:Description>Geodetic Latitude (positive N, negative S)</cd:Description>
+      <cd:Unit>1e-6 degrees_north</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_north</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lon">
+    <cd:Integer>
+      <cd:Description>Longitude (positive E, 0 at Greenwich, negative W)</cd:Description>
+      <cd:Unit>1e-6 degrees_east</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+        <cd:Unit>degrees_east</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="src_pack_cnt">
+    <cd:Integer>
+      <cd:Description>Source Packet Counter</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="instr_mode_id_flags">
+    <cd:Integer>
+      <cd:Description>Instrument Mode ID</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="meas_conf_data_flags">
+    <cd:Integer>
+      <cd:Description>Measurement Confidence Data</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alt_cog_ellip">
+    <cd:Integer>
+      <cd:Description>Altitude of CoG above reference ellipsoid</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="instant_alt_rate">
+    <cd:Integer>
+      <cd:Description>Instantaneous altitude rate</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_2">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>48</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_band_ocean_range">
+    <cd:Integer>
+      <cd:Description>Ku-band ocean range</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_band_ocean_range">
+    <cd:Integer>
+      <cd:Description>S-band ocean range</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sd_18hz_ku_ocean">
+    <cd:Integer>
+      <cd:Description>Standard deviation of 18 Hz Ku-band ocean range</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sd_18hz_s_ocean">
+    <cd:Integer>
+      <cd:Description>Standard deviation of 18 Hz S-band ocean range</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_18hz_ku_ocean">
+    <cd:Integer>
+      <cd:Description>Number of 18 Hz valid points for Ku-band ocean range</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_18hz_s_ocean">
+    <cd:Integer>
+      <cd:Description>Number of 18 Hz valid points for S-band ocean range</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_3">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>64</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="mod_dry_tropo_corr">
+    <cd:Integer>
+      <cd:Description>Model dry tropospheric correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="inv_barom_corr">
+    <cd:Integer>
+      <cd:Description>Inverted barometer correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mod_wet_tropo_corr">
+    <cd:Integer>
+      <cd:Description>Model wet tropospheric correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_wet_tropo_corr">
+    <cd:Integer>
+      <cd:Description>MWR derived wet tropospheric correction</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ra2_ion_corr_ku">
+    <cd:Integer>
+      <cd:Description>RA2 ionospheric correction on Ku-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ra2_ion_corr_s">
+    <cd:Integer>
+      <cd:Description>RA2 ionospheric correction on S-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ion_corr_doris_ku">
+    <cd:Integer>
+      <cd:Description>Ionospheric correction from DORIS on Ku-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ion_corr_doris_s">
+    <cd:Integer>
+      <cd:Description>Ionospheric correction from DORIS on S-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ion_corr_mod_ku">
+    <cd:Integer>
+      <cd:Description>Ionospheric correction from model on Ku-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ion_corr_mod_s">
+    <cd:Integer>
+      <cd:Description>Ionospheric correction from model on S-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sea_bias_ku">
+    <cd:Integer>
+      <cd:Description>Sea state bias on Ku-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sea_bias_s">
+    <cd:Integer>
+      <cd:Description>Sea state bias on S-band</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_4">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>96</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="square_ku_sig_wv_ht">
+    <cd:Integer>
+      <cd:Description>Square of Ku-band Significant wave height</cd:Description>
+      <cd:Unit>mm2</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="square_s_sig_wv_ht">
+    <cd:Integer>
+      <cd:Description>Square of S-band Significant wave height</cd:Description>
+      <cd:Unit>mm2</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_sig_wv_ht">
+    <cd:Integer>
+      <cd:Description>Ku-band Significant wave height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_sig_wv_ht">
+    <cd:Integer>
+      <cd:Description>S-band Significant wave height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sd_18hz_ku_swh">
+    <cd:Integer>
+      <cd:Description>Standard deviation of 18 Hz Ku-band SWH</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sd_18hz_s_swh">
+    <cd:Integer>
+      <cd:Description>Standard deviation of 18 Hz S-band SWH</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_18hz_ku_ocean_swh">
+    <cd:Integer>
+      <cd:Description>Number of 18 Hz valid points for Ku-band ocean SWH</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_18hz_s_ocean_swh">
+    <cd:Integer>
+      <cd:Description>Number of 18 Hz valid points for S-band ocean SWH</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_ocean_bscat_coeff">
+    <cd:Integer>
+      <cd:Description>Ku-band corrected Ocean backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_ocean_bscat_coeff">
+    <cd:Integer>
+      <cd:Description>S-band corrected Ocean backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sd_18hz_ku_ocean_bscat">
+    <cd:Integer>
+      <cd:Description>Standard deviation of 18 Hz Ku-band ocean backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sd_18hz_s_ocean_bscat">
+    <cd:Integer>
+      <cd:Description>Standard deviation of 18 Hz S-band ocean backscatter coefficient</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_18hz_ku_ocean_bscat">
+    <cd:Integer>
+      <cd:Description>Number of 18 Hz valid points for Ku-band ocean backscatter coefficient</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_18hz_s_ocean_bscat">
+    <cd:Integer>
+      <cd:Description>Number of 18 Hz valid points for S-band ocean backscatter coefficient</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_5">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>320</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_net_instr_corr_agc">
+    <cd:Integer>
+      <cd:Description>Ku-band net instrument correction for AGC</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_net_instr_corr_agc">
+    <cd:Integer>
+      <cd:Description>S-band net instrument correction for AGC</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_atm_atten_corr">
+    <cd:Integer>
+      <cd:Description>Ku-band atmospheric attenuation correction</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_atm_atten_corr">
+    <cd:Integer>
+      <cd:Description>S-band atmospheric attenuation correction</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ku_rain_atten">
+    <cd:Integer>
+      <cd:Description>Ku-band rain attenuation</cd:Description>
+      <cd:Unit>1e-2 dB</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>dB</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="off_nad_ang_platf">
+    <cd:Integer>
+      <cd:Description>Square of the satellite off-nadir angle from platform data</cd:Description>
+      <cd:Unit>1e-4 degrees2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10000.000000">
+        <cd:Unit>degrees2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="off_nad_ang_wvform">
+    <cd:Integer>
+      <cd:Description>Square of the satellite off-nadir angle from waveform data</cd:Description>
+      <cd:Unit>1e-4 degrees2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10000.000000">
+        <cd:Unit>degrees2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="m_sea_surf_ht">
+    <cd:Integer>
+      <cd:Description>Mean sea-surface height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="geoid_ht">
+    <cd:Integer>
+      <cd:Description>Geoid height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ocean_depland_elev">
+    <cd:Integer>
+      <cd:Description>Ocean depth/land elevation</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tot_geocen_ocn_tide_ht_sol1">
+    <cd:Integer>
+      <cd:Description>Total geocentric ocean tide height (solution 1)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tot_geocen_ocn_tide_ht_sol2">
+    <cd:Integer>
+      <cd:Description>Total geocentric ocean tide height (solution 2)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="long_period_ocn_tide_ht">
+    <cd:Integer>
+      <cd:Description>Long period Tide height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tidal_load_ht_sol2">
+    <cd:Integer>
+      <cd:Description>Tidal loading height (solution 2)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="solid_earth_tide_ht">
+    <cd:Integer>
+      <cd:Description>Solid earth tide height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="geocen_pole_tide_ht">
+    <cd:Integer>
+      <cd:Description>Geocentric pole tide height</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mod_surf_atm_pres">
+    <cd:Integer>
+      <cd:Description>Model surface atmospheric pressure</cd:Description>
+      <cd:Unit>10 Pa</cd:Unit>
+      <cd:Conversion numerator="10.000000" denominator="1.000000">
+        <cd:Unit>Pa</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_wvapour_cont">
+    <cd:Integer>
+      <cd:Description>MWR water vapour content</cd:Description>
+      <cd:Unit>1e-2 g/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>g/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_liq_water_cont">
+    <cd:Integer>
+      <cd:Description>MWR liquid water content</cd:Description>
+      <cd:Unit>1e-2 g/cm2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>g/cm2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ra2_elec_cont">
+    <cd:Integer>
+      <cd:Description>RA2 Total electron content (1 TECU = 1e16 electrons / m^2)</cd:Description>
+      <cd:Unit>1e15/m2</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="10.000000">
+        <cd:Unit>1e16/m2</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ra2_wind_sp">
+    <cd:Integer>
+      <cd:Description>RA2 wind speed</cd:Description>
+      <cd:Unit>mm/s</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mod_wind_sp_u">
+    <cd:Integer>
+      <cd:Description>u component of the model wind vector</cd:Description>
+      <cd:Unit>mm/s</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mod_wind_sp_v">
+    <cd:Integer>
+      <cd:Description>v component of the model wind vector</cd:Description>
+      <cd:Unit>mm/s</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tidal_load_ht_sol1">
+    <cd:Integer>
+      <cd:Description>Tidal loading height (solution 1)</cd:Description>
+      <cd:Unit>mm</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_6">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>64</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="interpole_238_temp_mwr">
+    <cd:Integer>
+      <cd:Description>Interpolated 23.8 GHz brightness temperature from MWR</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>K</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_365_temp_mwr">
+    <cd:Integer>
+      <cd:Description>Interpolated 36.5 GHz brightness temperature from MWR</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>K</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_sd_238_temp_mwr">
+    <cd:Integer>
+      <cd:Description>Interpolated standard deviation of MWR 23.8 GHz brightness temperature</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>K</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_sd_365_temp_mwr">
+    <cd:Integer>
+      <cd:Description>Interpolated standard deviation of MWR 36.5 GHz brightness temperature</cd:Description>
+      <cd:Unit>1e-2 K</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="100.000000">
+        <cd:Unit>K</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>int16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_7">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ave_ku_chirp">
+    <cd:Integer>
+      <cd:Description>Average Ku chirp band. Ku chirp band value is associated with the minimum of the 20 elementary chirp band indexes in the source packet. Possible values: 0 = there is at least one record at 320 MHz, 1 = there is at least one record at 80 MHz (and the others are at 20 MHz), 2 = all input records are at 20 MHz</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="unused_bits_1">
+    <cd:Raw>
+      <cd:Description>Unused ku_chirp_id_flags bits</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_chirp_id_flags">
+    <cd:Array>
+      <cd:Description>Ku chirp band identifiers. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>Possible values: 0 = 320 MHz (Ku), 1 = 80 MHz (Ku), 2 = 20 MHz (Ku). Default values (bits set to 1) are output in the event of non tracking records (records not in Tracking, Preset Tracking or Preset Loop Output), wherever the sum of all Ku and S waveforms samples are set to 0, or if Ku AGC or Ku onboard Rx delay are out of bounds</cd:Description>
+        <cd:BitSize>2</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="unused_bits_2">
+    <cd:Raw>
+      <cd:Description>Unused error_flag_chirp_id_flags bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="error_flag_chirp_id_flags">
+    <cd:Array>
+      <cd:Description>Error flag for chirp band id. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>0 = valid measurement, 1 = invalid</cd:Description>
+        <cd:BitSize>1</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="instr_flags">
+    <cd:Record>
+      <cd:Description>Instrument flag</cd:Description>
+      <cd:Field name="spare">
+        <cd:Raw>
+          <cd:Description>spare</cd:Description>
+          <cd:BitSize>24</cd:BitSize>
+        </cd:Raw>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="s_band_anomaly">
+        <cd:Integer>
+          <cd:Description>Flag for S-band anomaly</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="flight_cal_corr_s">
+        <cd:Integer>
+          <cd:Description>Flag for availability of S flight calibration correction</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="flight_cal_corr_ku">
+        <cd:Integer>
+          <cd:Description>Flag for availability of Ku flight calibration correction</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="ptr_cal_band">
+        <cd:Integer>
+          <cd:Description>PTR calibration band identifier field</cd:Description>
+          <cd:BitSize>3</cd:BitSize>
+          <cd:NativeType>uint32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="decoded_redundancy_error">
+        <cd:Integer>
+          <cd:Description>Error flag for decoded redundancy flags</cd:Description>
+          <cd:BitSize>2</cd:BitSize>
+          <cd:NativeType>uint32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="unused_bits_3">
+    <cd:Raw>
+      <cd:Description>Unused fault_id_flags bits</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="fault_id_flags">
+    <cd:Array>
+      <cd:Description>Fault indentifiers. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>0 = valid measurement, 1 = invalid. Unused bits are set to 1</cd:Description>
+        <cd:BitSize>2</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="spare_8">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>64</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="unused_bits_4">
+    <cd:Raw>
+      <cd:Description>Unused wvfrom_fault_id_flags bits</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="wvfrom_fault_id_flags">
+    <cd:Array>
+      <cd:Description>Waveforms samples fault indentifiers. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>2</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="unused_bits_5">
+    <cd:Raw>
+      <cd:Description>Unused instr_id_data_level_flags bits</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="instr_id_data_level_flags">
+    <cd:Array>
+      <cd:Description>Instrument mode ID at data block level. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>0 = spare, 1 = acquisition, 2 = Tracking, 3 = IF Cal, 4 = BITE RF, 5 = BITE DGT, 6 = Preset Tracking, 7 = Preset Loop Output, 8 = Alignment failed. Default values (bits set to 1) are output in the event of non tracking records (records not in Tracking, Preset Tracking or Preset Loop Output), wherever the sum of all Ku and S waveform samples are set to 0, or if Ku AGC or Ku onboard Rx delay are out of bounds</cd:Description>
+        <cd:BitSize>4</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_meas_ku_calibr">
+    <cd:Integer>
+      <cd:Description>No. of measures for Ku flight calibration factor evaluation</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_meas_s_calibr">
+    <cd:Integer>
+      <cd:Description>No. of measures for S flight calibration factor evaluation</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_instr_flags">
+    <cd:Record>
+      <cd:Description>MWR instrument flag</cd:Description>
+      <cd:Field name="tmp_flg">
+        <cd:Integer>
+          <cd:Description>Indicates uniformity of CEU temperature: 0 = temperature consistency, 1 = temperature inconsistency</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="obdh_flg">
+        <cd:Integer>
+          <cd:Description>flag to indicate data is missing: 0 = no error, 1 = error</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="red_flg">
+        <cd:Integer>
+          <cd:Description>Redundancy indicator ICU channel: 0 = normal channel, 1 = redundant channel</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="pbp_flg">
+        <cd:Integer>
+          <cd:Description>Power Bus Protection indicator: 0 = no protection, 1 = protection</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="oop_flg">
+        <cd:Integer>
+          <cd:Description>Overvoltage/Overload protection indicator: 0 = no protection, 1 = protection</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="spare">
+        <cd:Raw>
+          <cd:Description>spare</cd:Description>
+          <cd:BitSize>11</cd:BitSize>
+        </cd:Raw>
+        <cd:Hidden/>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="spare_9">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>48</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_peak">
+    <cd:Integer>
+      <cd:Description>1 Hz Ku-band peakiness</cd:Description>
+      <cd:Unit>1e-3</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000"/>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="s_peak">
+    <cd:Integer>
+      <cd:Description>1 Hz S-band peakiness</cd:Description>
+      <cd:Unit>1e-3</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="1000.000000"/>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_11">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>96</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="unused_bits_6">
+    <cd:Raw>
+      <cd:Description>Unused ku_ocean_retrk_qua_flags bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ku_ocean_retrk_qua_flags">
+    <cd:Array>
+      <cd:Description>Ku-band ocean retracking quality. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>0 = valid, 1 = invalid</cd:Description>
+        <cd:BitSize>1</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="unused_bits_7">
+    <cd:Raw>
+      <cd:Description>Unused s_ocean_retrk_qua_flags bits</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="s_ocean_retrk_qua_flags">
+    <cd:Array>
+      <cd:Description>S-band ocean retracking quality. Elements are in reverse order: the last array element refers to the first data block</cd:Description>
+      <cd:Dimension>20</cd:Dimension>
+      <cd:Integer>
+        <cd:Description>0 = valid, 1 = invalid</cd:Description>
+        <cd:BitSize>1</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="altim_landocean_flag">
+    <cd:Integer>
+      <cd:Description>Altimeter surface type flag. The flag is based on a land/sea mask file and has the following four meanings: 0 = oceans or semi-enclosed seas, 1 = enclosed seas or lakes, 2 = continental ice, 3 = land</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="radio_landocean_flag">
+    <cd:Integer>
+      <cd:Description>Radiometer land/ocean type flag. This flag has two states: 0 = Ocean, 1 = Land. In NRT, when MWR data are not available, this flag is set to its maximum value. In OFL, when MWR data are not available, this flag is set to its default value which is 1 (land)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mwr_qua_interp_flag">
+    <cd:Integer>
+      <cd:Description>MWR Quality interpolation flag. 0 = interpolation was OK with no gap between the two MWR measurements around the RA-2 time, 1 = interpolation was OK but there was a gap between the two selected MWR measurements, 2 = extrapolation was used, 3 = neither interpolation nor extrapolation could be used. The default value (3 in NRT, and 0 in OFL) is output when no MWR data is available</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rain_flag">
+    <cd:Integer>
+      <cd:Description>Altimeter rain flag. 1 = rain (the expected Ku/S-band rain-free relationship minus the uncorrected Ku ocean backscattering coefficient, and if the MWR liquid water content, interpolated to RA-2 time, are bigger than certain thresholds), 0 = no rain (otherwise)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="interpole_flag">
+    <cd:Record>
+      <cd:Description>interpolation flag</cd:Description>
+      <cd:Field name="spare">
+        <cd:Raw>
+          <cd:Description>spare</cd:Description>
+          <cd:BitSize>12</cd:BitSize>
+        </cd:Raw>
+        <cd:Hidden/>
+      </cd:Field>
+      <cd:Field name="meteo_interp">
+        <cd:Integer>
+          <cd:Description>meteorological data interpolation flag (0 = 4 points over ocean, 1 = less than 4 points)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="ocean_tide_sol2">
+        <cd:Integer>
+          <cd:Description>ocean tide solution 2 interpolation flag (0 = 4 points over ocean, 1 = less than 4 points)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="ocean_tide_sol1">
+        <cd:Integer>
+          <cd:Description>ocean tide solution 1 interpolation flag (0 = 4 points over ocean, 1 = less than 4 points)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="mss">
+        <cd:Integer>
+          <cd:Description>MSS interpolation flag (0 = good, 1 = bad)</cd:Description>
+          <cd:BitSize>1</cd:BitSize>
+          <cd:NativeType>uint8</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="spare_12">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>
